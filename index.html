@@ -3,26 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full-Screen Rive Animation</title>
+  <title>Responsive Rive Animation</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <canvas id="riveCanvas"></canvas>
+  <canvas id="canvas"></canvas>
 
-  <script type="module">
-    // Import the Rive runtime from the installed npm package
-    import Rive from 'rive-js';
-
-    // Reference the canvas element
-    const canvas = document.getElementById('riveCanvas');
-
+  <script>
     // Initialize the Rive animation
-    const rive = new Rive({
-      src: './riv/read_the_air.riv', // Path to your .riv file
-      canvas: canvas,
-      autoplay: true, // Automatically play the animation
-      fit: Rive.Fit.COVER, // Ensures the animation covers the entire canvas
+    const riveInstance = new rive.Rive({
+      src: "read_the_air.riv", // Path to your Rive file
+      canvas: document.getElementById("canvas"),
+      autoplay: true,
+      stateMachines: ["Drinks_MainScene"], // Correct state machine name
+      fit: rive.Fit.CONTAIN, // Ensures the entire animation fits within the canvas
+      alignment: rive.Alignment.CENTER, // Centers the animation
+      onLoad: () => {
+        console.log("Rive animation loaded successfully.");
+        resizeCanvas(); // Adjust the canvas on initial load
+      },
     });
+
+    // Function to resize the canvas to fill the viewport dynamically
+    function resizeCanvas() {
+      const canvas = document.getElementById("canvas");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      riveInstance.resizeDrawingSurfaceToCanvas();
+    }
+
+    // Add an event listener to resize the canvas dynamically on window resize
+    window.addEventListener("resize", resizeCanvas);
   </script>
 </body>
 </html>
