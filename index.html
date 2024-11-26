@@ -16,10 +16,11 @@
       src: "read_the_air.riv", // Path to your Rive file
       canvas: document.getElementById("canvas"),
       autoplay: true,
-      stateMachines: ["Drinks_MainScene"], // Correct state machine name
+      stateMachines: ["Scent_MainScene"], // Correct state machine name
       fit: rive.Fit.CONTAIN, // Ensures the entire animation fits within the canvas
       alignment: rive.Alignment.CENTER, // Centers the animation
       autoplay: true,
+      animation: 'TextDefault',
       onLoad: () => {
         console.log("Rive animation loaded successfully.");
         resizeCanvas(); // Adjust the canvas on initial load
