@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rive Animation Post</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.8.0/tufte.min.css">
+  <link rel="stylesheet" href="styles.css"> <!-- Optional for custom styles -->
+</head>
+<body>
+  <article>
+    <header>
+      <h1>Exploring Rive Animations</h1>
+      <p class="subtitle">An engaging and interactive animation for modern websites.</p>
+    </header>
+
+    <canvas id="riveCanvas"></canvas>
+
+    <section>
+      <h2>What is Rive?</h2>
+      <p>
+        Rive is a powerful tool for creating animations that are interactive, dynamic, and scalable. With Rive, you can easily design and integrate animations for apps, websites, and games.
+      </p>
+    </section>
+
+    <section>
+      <h2>Animation Demo</h2>
+      <p>
+        Below is a full-screen Rive animation example. Click anywhere on the animation to interact with it.
+      </p>
+    </section>
+
+    <footer>
+      <p>
+        Written by <b>Your Name</b>, November 2024. Powered by the elegance of <a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a>.
+      </p>
+    </footer>
+  </article>
+
+  <script type="module">
+    import Rive from 'rive-js';
+
+    const canvas = document.getElementById('riveCanvas');
+
+    const rive = new Rive({
+      src: './riv/read_the_air.riv', // Path to your Rive file
+      canvas: canvas,
+      autoplay: true,
+      fit: Rive.Fit.COVER,
+    });
+  </script>
+</body>
+</html>
