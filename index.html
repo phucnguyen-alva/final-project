@@ -3,40 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Rive Animation</title>
+  <title>Read the Air</title>
   <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <canvas id="canvas"></canvas>
-
-  <script>
-    // Initialize the Rive animation
-    const riveInstance = new rive.Rive({
-      src: "read_the_air.riv", // Path to your Rive file
-      canvas: document.getElementById("canvas"),
-      autoplay: true,
-      stateMachines: ["Scent_MainScene"], // Correct state machine name
-      fit: rive.Fit.CONTAIN, // Ensures the entire animation fits within the canvas
-      alignment: rive.Alignment.CENTER, // Centers the animation
-      autoplay: true,
-      animation: 'TextDefault',
-      onLoad: () => {
-        console.log("Rive animation loaded successfully.");
-        resizeCanvas(); // Adjust the canvas on initial load
-      },
-    });
-
-    // Function to resize the canvas to fill the viewport dynamically
-    function resizeCanvas() {
+  <body>
+    <!-- Center Text -->
+    <div id="center-text-container">
+      <div id="center-text">"Read the Air" - Imaginary Author</div>
+    </div>
+    
+    <!-- Burger Navigation Menu -->
+    <nav class="nav-bar">
+      <div class="burger-menu" id="burger-menu">
+        &#9776; <!-- Burger Icon -->
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  
+    <!-- Rive Animation Canvas -->
+    <canvas id="canvas"></canvas>
+  
+    <!-- Floating Bubbles -->
+    <div class="bubble" id="bubble1" data-link="#home">Fox in the Flower Bed</div>
+    <div class="bubble" id="bubble2" data-link="#about">Yesterday Haze</div>
+    <div class="bubble" id="bubble3" data-link="#contact">In Love with Everything</div>
+    <div class="bubble" id="bubble4" data-link="#page4">The Soft Lawn</div>
+    <div class="bubble" id="bubble5" data-link="#page5">Memoirs of a Trespasser</div>
+    <div class="bubble" id="bubble6" data-link="#page6">Falling Into the Sea</div>
+    <div class="bubble" id="bubble7" data-link="#page7">Every Storm a Serenade</div>
+  
+    <script>
+      // Initialize the Rive animation
       const canvas = document.getElementById("canvas");
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      riveInstance.resizeDrawingSurfaceToCanvas();
-    }
-
-    // Add an event listener to resize the canvas dynamically on window resize
-    window.addEventListener("resize", resizeCanvas);
-  </script>
-</body>
-</html>
+  
+      const riveInstance = new rive.Rive({
+        src: "read_the_air_6.riv", // Rive file URL
+        canvas: canvas,
+        autoplay: true,
+        artboard: 'HandFox',
+        stateMachines: ["State Machine 1"], // State machine name in Rive file
+        fit: rive.Fit.CONTAIN, // Fit animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Resize the canvas on initial load
+        },
+      });
+  
+      // Resize canvas to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+  
+      // Listen for window resize events
+      window.addEventListener("resize", resizeCanvas);
+    
+      // Add click functionality to floating bubbles
+      document.querySelectorAll('.bubble').forEach(bubble => {
+        bubble.addEventListener('click', () => {
+          const link = bubble.dataset.link;
+          window.location.href = link; // Navigate to the linked section or page
+        });
+      });
+  
+      // Burger Menu Toggle
+      const burgerMenu = document.getElementById('burger-menu');
+      const navLinks = document.getElementById('nav-links');
+  
+      burgerMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    </script>
+  </body>
+  </html>
+  

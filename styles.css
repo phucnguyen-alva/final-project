@@ -1,16 +1,283 @@
-/* Reset margin, padding, and ensure full-height layout */
+/* General Reset */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: black; /* Set background color to black */
+  background-color: black;
   overflow: hidden; /* Prevent scrollbars */
 }
 
-/* Make the canvas fill the entire viewport */
+/* Canvas Styling */
 canvas {
   display: block;
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Center Top Text */
+/* Center Text Container */
+#center-text-container {
+  position: absolute;
+  top: 5%; /* Adjust this value to move the text vertically */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+}
+
+/* Center Text Typewriter Effect */
+#center-text {
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  color: #ffffff;
+  white-space: nowrap; /* Prevent wrapping during animation */
+  overflow: hidden; /* Hide overflowing text */
+  border-right: 2px solid rgba(255, 255, 255, 0.75); /* Cursor effect */
+  width: 0; /* Start with no text visible */
+  animation: typewriter 4s steps(30, end) forwards, blink 0.5s step-end 4s;
+}
+
+/* Typewriter Animation */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; /* Matches the width of the text */
+  }
+}
+
+/* Blinking Cursor (ends after typing) */
+@keyframes blink {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+
+/* After Typing */
+#center-text.finished {
+  border-right: none; /* Remove cursor completely */
+}
+
+
+/* Navigation Bar */
+.nav-bar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 20;
+}
+
+.burger-menu {
+  font-size: 2rem;
+  color: #ffffff;
+  cursor: pointer;
+  display: block; /* Always visible */
+}
+
+.nav-links {
+  list-style: none;
+  display: none; /* Hidden by default */
+  gap: 0;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding: 10px 0;
+}
+
+.nav-links.show {
+  display: block; /* Show menu when toggled */
+}
+
+.nav-links li {
+  text-align: right;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Georgia', serif;
+  padding: 10px 20px;
+  display: block;
+  transition: background 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* General Styling for Bubbles */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  animation: float 4s infinite ease-in-out;
+
+  /* Glassmorphism Style */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  backdrop-filter: blur(8px); /* Blur effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Soft border */
+
+  /* Smooth Hover Effect */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect for Bubbles */
+.bubble:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Hover Colors for Each Bubble */
+#bubble1:hover {
+  background-color: rgba(214, 179, 123, 0.8); /* Warm beige */
+  color: #3e2c25; /* Deep brown text */
+}
+
+#bubble2:hover {
+  background-color: rgba(152, 169, 140, 0.8); /* Olive green */
+  color: #2d3b2e; /* Dark green text */
+}
+
+#bubble3:hover {
+  background-color: rgba(173, 153, 181, 0.8); /* Dusty lavender */
+  color: #3b3245; /* Deep purple text */
+}
+
+#bubble4:hover {
+  background-color: rgba(238, 210, 174, 0.8); /* Soft peach */
+  color: #4b3c2c; /* Chocolate brown text */
+}
+
+#bubble5:hover {
+  background-color: rgba(180, 140, 150, 0.8); /* Vintage blush pink */
+  color: #5a3f3f; /* Deep red-brown text */
+}
+
+#bubble6:hover {
+  background-color: rgba(140, 140, 165, 0.8); /* Slate blue */
+  color: #3c3c52; /* Deep slate text */
+}
+
+#bubble7:hover {
+  background-color: rgba(173, 163, 152, 0.8); /* Faded sepia */
+  color: #4f3e2c; /* Coffee brown text */
+}
+
+
+
+/* Example Bubble Sizes and Positions */
+#bubble1 {
+  top: 20%;
+  left: 10%;
+  width: 140px;
+  height: 140px;
+}
+
+#bubble2 {
+  top: 30%;
+  left: 25%;
+  width: 120px;
+  height: 120px;
+}
+
+#bubble3 {
+  top: 40%;
+  left: 70%;
+  width: 160px;
+  height: 160px;
+}
+
+#bubble4 {
+  top: 50%;
+  left: 40%;
+  width: 110px;
+  height: 110px;
+}
+
+#bubble5 {
+  top: 60%;
+  left: 60%;
+  width: 150px;
+  height: 150px;
+}
+
+#bubble6 {
+  top: 70%;
+  left: 20%;
+  width: 90px;
+  height: 90px;
+}
+
+#bubble7 {
+  top: 80%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .bubble {
+    font-size: 0.7rem;
+  }
+
+  #bubble1, #bubble2, #bubble3, #bubble4, #bubble5, #bubble6, #bubble7 {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bubble {
+    font-size: 0.6rem;
+  }
+
+  #bubble1, #bubble2, #bubble3, #bubble4, #bubble5, #bubble6, #bubble7 {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Initial State for Fade-In */
+#canvas, .bubble {
+  opacity: 0; /* Initially hidden */
+}
+
+/* Fade-In Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Canvas Fade-In */
+#canvas {
+  animation: fadeIn 2s ease 5s forwards; /* Fade in after 5 seconds */
+}
+
+/* Bubble Fade-In */
+.bubble {
+  animation: fadeIn 2s ease 7s forwards; /* Fade in after 10 seconds */
 }

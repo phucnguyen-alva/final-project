@@ -63,5 +63,16 @@
       fit: Rive.Fit.COVER,
     });
   </script>
+
+  <script>
+    // Burger Menu Toggle
+    const burgerMenu = document.getElementById('burger-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    burgerMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
 </body>
 </html>
