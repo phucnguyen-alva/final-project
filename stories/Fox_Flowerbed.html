@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fox in the Flowerbed</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+  <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
+  <style>
+    .button-container {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: white;
+      border: none;
+      text-align: center;
+      cursor: pointer;
+    }
+    .button:hover {
+      border-radius: 20px;
+    }
+    canvas {
+      display: block;
+      width: 50vw; /* Full viewport width */
+      height: 50vh; /* Full viewport height */
+    }
+  </style>
+
+</head>
+<body>
+          <!-- Buttons for navigation -->
+  <div class="button-container">
+    <!-- Link to homepage -->
+    <a href="../index.html" class="button">Return to Homepage</a>
+
+    <!-- Link to Vietnamese version -->
+    <a href="../stories_vn/Fox_Flowerbed.html" class="button">View in Vietnamese</a>
+  </div>    
+  <article>
+    <header>
+      <h1>Yesterday Haze with a Fox in the Flowerbed</h1>
+      <p class="subtitle">Traipsing through a mountain meadow, visions of sheer summer dresses spinning in the breeze, the buzz of the first weeks of Spring</p>
+    </header>
+
+    <canvas id="riveCanvas"></canvas>
+    <script>
+      // Initialize the Rive animation
+      const canvas = document.getElementById("riveCanvas");
+    
+      const riveInstance = new rive.Rive({
+        src: "../animation/fox_walk_cycle.riv", // Path to the Rive file
+        canvas: canvas,
+        autoplay: true,
+        artboard: "Artboard 2", // Specify the artboard
+        stateMachines: ["State Machine 1"], // State machine in the Rive file
+        fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Adjust canvas size on load
+        },
+      });
+    
+      // Adjust the canvas size to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    
+      // Listen for window resize events to dynamically adjust the canvas
+      window.addEventListener("resize", resizeCanvas);
+    </script>
+
+    <section>
+      <h2>It wasn’t the only wooden puppet in life, but it was the only one we both saw together.</h2>
+      <p>The sound of the mist was piercing. In the front row, every sound from the audience behind and the stage ahead merged into a white noise. I glanced at Di sitting beside me, my fingers brushing the edge of his chair. A fleeting glance exchanged with the darkness before the stage lights returned. Colors slowly emerged, brought to life by the heat of photons. Warm hues danced on the water puppets and traditional flags, punctuating the symphony of the theater. The movements on stage drew my eyes back to its focal point.</p>
+
+      <p>Di said nothing, but his pinky tapped lightly on the armrest in rhythm with the beat of the drum. Mist hovered above the water, creating an ethereal effect for the appearance of objects imbued with soul. The water puppets emerged from the crimson curtain’s mystery. They moved in response to the beckoning music, played by artisans flanking the stage. Even the folds of the curtain rippled faintly, mirroring the water’s surface, stirred by the gentle sigh of sound. Di stole a furtive glance at me amidst the interplay of tones, but neither of us spoke. The mist gradually dispersed, and the puppet play began.</p>
+
+      <p>The puppets glided gracefully across the water’s surface, their eyes piercing into the depths of lonely, incomprehensible souls. Unlike Western marionettes suspended by strings, these stood upon rods submerged beneath the water, their movements fluid and unrestrained. Yet Di's expression grew fearful as the mist closed in again under golden light. He seemed troubled by something more obscure than himself, pondering whether the puppet atop its wooden perch pondered its own existence.</p>
+
+      <p>It wasn’t the only wooden puppet in life, but it was the only one we both saw together. Spotlights wandered lazily over each crease in the fabric. A chèo song began, its words elusive, refraining from unlocking my thoughts. It was much like the way Di had reversed himself during our quarrels. Yet, as the echoes faded, the mist cleared again, returning the space to the fullness of reality’s colors.
+      I counted the times I had met Di, up to this very moment. Between the gaps of my fingers as the curtain rose, Di fixated on the details of the costumes and the minute patterns on porcelain faces. He never tired of tracing such intricacies, ones I never cared for. Perhaps that was why we could never quite look in the same direction.</p>
+
+      <p>I envisioned the puppet shattering, a shard of porcelain lodging itself in his eye. Would Di look to me then, pleading for rescue? But that was merely a question scattered in the confines of our shared thoughts. The mist veiled his eyes again before revealing the faint ripples on the projection’s water. A flock of ducks drifted away behind the curtain, floating idly on the stream. Di’s eyes grew misty too, reflecting a clear, inner tide. His gaze devoured the world, too pure to meet anyone else directly. His eyes swam, following the ducks circling on the emerald stage. The music spiraled, filling in the gaps of motion, smoothing the rough edges in human vision.</p>
+
+      <p>But then, the golden fox appeared, surfacing and diving like a splinter beneath skin. Di seemed skeptical of the fox’s movements and the puppets’. He hypothesized:</p>
+
+      <p>"There must be people beneath the water, guiding them to marked positions."</p>
+
+      <p>Yet Di couldn’t explain how the fox climbed the banana tree, hiding behind its broad blossoms, poised for a feast. It trembled stealthily, waiting for the right moment to pounce into the realm of audacity. Di was much like that fox in days past, when he commanded his own movements, unhesitant despite pain. But something had changed the way he approached life and those around him—something about the fox perched among banana flowers made him doubt the goodness in the world.
+      Music swelled from the trống cơm, đàn nhị, đàn tranh, đàn bầu, mingling with the lilting voice of the ả đào singer. Yet the fox remained motionless on its branch. Suddenly, another fox swam out from behind the banana tree. The audience buzzed with speculation—was this symbolic, or a technical error? Beside me, Di exhaled a soft sigh of relief, his eyes darting between the two foxes as if they held the key to life itself.</p>
+
+      <p>My pinky rested near his on my lap, but they hesitated, like two magnets repelling each other.</p>
+
+      <p>A photographer prowled to the front row, raising his camera to capture the rare moment. But as the flash fired, it dispersed the mist, exposing a startlingly vivid scene. The fox on the branch quivered, falling from its perch as the light struck. The ả đào dropped her cups into the lake, the sound forming a melody of its own. In that moment of clarity, the fox was no longer lounging on its floral bed in midair. It sank to the lake’s depths without guidance.
+      Then, the lake itself shattered. Gravity tore apart the past’s fragile framework. Faint cries arose from behind, mingling with the gurgling of water seeping into shoes and cracks.</p>
+
+      <p>Di’s eyes remained fixed on the stage’s heart, though his pinky withdrew, and his hand supported his chin, lost in reality. He paid no mind to the dissipating mist or the absent fox. It had plunged into the lake and was sealed by time’s finitude—or was it eternity?
+      I watched Di watching himself, as though one lifetime wouldn’t suffice to grasp the ninefold reincarnations of the fox before us.
+      The water flowed endlessly, merging the stage with the audience’s lives. But by then, the hall had emptied. Somewhere, only my pinky remained, tentatively guiding a wooden rod lodged into Di. His figure stiffened.</p>
+
+      <p>Di was a puppet, a fox, and the world around him, his floral bed.</p>
+    </section>
+  </article>
+
+
+</body>
+</html>
