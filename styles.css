@@ -13,24 +13,59 @@ canvas {
   display: block;
   width: 100vw;
   height: 100vh;
+  position: relative; /* Ensure it can be moved relative to its default position */
+  top: 60px; 
 }
 
-/* Center Top Text */
+@keyframes bubbleColorCycle {
+  0% {
+    background-color: rgba(214, 179, 123, 0.2); /* Bubble 1 color */
+  }
+  25% {
+    background-color: rgba(152, 169, 140, 0.2); /* Bubble 2 color */
+  }
+  50% {
+    background-color: rgba(173, 153, 181, 0.2); /* Bubble 3 color */
+  }
+  75% {
+    background-color: rgba(238, 210, 174, 0.2); /* Bubble 4 color */
+  }
+  100% {
+    background-color: rgba(38, 222, 255, 0.2); /* Default / Bubble 7 color */
+  }
+}
+
 /* Center Text Container */
 #center-text-container {
   position: absolute;
-  top: 5%; /* Adjust this value to move the text vertically */
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
   text-align: center;
+
+  /* Glassmorphism Effect */
+  background-color: rgba(38, 222, 255, 0.2); /* Initial color */
+  backdrop-filter: blur(10px); /* Blur effect for glass-like appearance */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px; /* Space around the text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  display: inline-block; /* Ensures the box wraps only the text */
+
+  /* Animation for Background Color */
+  animation: bubbleColorCycle 5s infinite alternate ease-in-out;
 }
 
+/* On Hover: Restart the Cycle */
+#center-text-container:hover {
+  animation: bubbleColorCycle 5s infinite alternate ease-in-out;
+}
 /* Center Text Typewriter Effect */
 #center-text {
   font-family: 'Georgia', serif;
   font-size: 1.8rem;
-  color: #ffffff;
+  color: #fff9f9;
   white-space: nowrap; /* Prevent wrapping during animation */
   overflow: hidden; /* Hide overflowing text */
   border-right: 2px solid rgba(255, 255, 255, 0.75); /* Cursor effect */

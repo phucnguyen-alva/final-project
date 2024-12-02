@@ -11,7 +11,7 @@
   <body>
     <!-- Center Text -->
     <div id="center-text-container">
-      <div id="center-text">"Read the Air" - Imaginary Authors</div>
+      <div id="center-text">Read the Air • Imaginary Authors</div>
     </div>
     
     <!-- Burger Navigation Menu -->
@@ -39,6 +39,13 @@
     <div class="bubble" id="bubble7" data-link="#page7">Slow Explosions</div>
   
     <script>
+      const centerText = document.getElementById("center-text");
+
+      // Set a timeout to match the typewriter animation duration (4s in this case)
+      setTimeout(() => {
+        centerText.classList.add("finished"); // Add the 'finished' class
+      }, 4000); // 4 seconds (same as the animation duration)
+
       // Initialize the Rive animation
       const canvas = document.getElementById("canvas");
   
@@ -80,6 +87,23 @@
   
       burgerMenu.addEventListener('click', () => {
         navLinks.classList.toggle('show');
+      });
+      const bubbles = document.querySelectorAll(".bubble");
+
+      document.addEventListener("mousemove", (event) => {
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+
+        bubbles.forEach((bubble) => {
+          const rect = bubble.getBoundingClientRect();
+          const bubbleX = rect.left + rect.width / 2; // Bubble center X
+          const bubbleY = rect.top + rect.height / 2; // Bubble center Y
+
+          const deltaX = (mouseX - bubbleX) * 0.05; // Adjust multiplier for subtle effect
+          const deltaY = (mouseY - bubbleY) * 0.05;
+
+          bubble.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+        });
       });
     </script>
   </body>
