@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Initialize the Rive animation
 const riveInstance = new rive.Rive({
-  src: "read_the_air_6.riv", // Rive file URL
+  src: "read_the_air_update.riv", // Rive file URL
   canvas: canvas,
   autoplay: true,
   artboard: "HandFox",
@@ -77,3 +77,5 @@ document.addEventListener("mousemove", (event) => {
     bubble.style.transform = `translate(${x * speed}rem, ${y * speed}rem) scale(1)`;
   });
 });
+
+
