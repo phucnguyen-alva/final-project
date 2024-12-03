@@ -11,20 +11,14 @@
   <body>
     <!-- Center Text -->
     <div id="center-text-container">
-      <div id="center-text">Read the Air • Imaginary Authors</div>
+      <div id="center-text">"Read the Air"</div>
+    </div>
+    <div id="brand-logo">
+      <a href="#about">
+        <img src="Logo.png" alt="Brand Logo" />
+      </a>
     </div>
     
-    <!-- Burger Navigation Menu -->
-    <nav class="nav-bar">
-      <div class="burger-menu" id="burger-menu">
-        &#9776; <!-- Burger Icon -->
-      </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
   
     <!-- Rive Animation Canvas -->
     <canvas id="canvas"></canvas>
@@ -38,74 +32,7 @@
     <div class="bubble" id="bubble6" data-link="#page6">A Whiff of Waffle Cone</div>
     <div class="bubble" id="bubble7" data-link="#page7">Slow Explosions</div>
   
-    <script>
-      const centerText = document.getElementById("center-text");
-
-      // Set a timeout to match the typewriter animation duration (4s in this case)
-      setTimeout(() => {
-        centerText.classList.add("finished"); // Add the 'finished' class
-      }, 4000); // 4 seconds (same as the animation duration)
-
-      // Initialize the Rive animation
-      const canvas = document.getElementById("canvas");
-  
-      const riveInstance = new rive.Rive({
-        src: "read_the_air_6.riv", // Rive file URL
-        canvas: canvas,
-        autoplay: true,
-        artboard: 'HandFox',
-        stateMachines: ["State Machine 1"], // State machine name in Rive file
-        fit: rive.Fit.CONTAIN, // Fit animation within the canvas
-        alignment: rive.Alignment.CENTER, // Center the animation
-        onLoad: () => {
-          console.log("Rive animation loaded");
-          resizeCanvas(); // Resize the canvas on initial load
-        },
-      });
-  
-      // Resize canvas to fit the viewport
-      function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        riveInstance.resizeDrawingSurfaceToCanvas();
-      }
-  
-      // Listen for window resize events
-      window.addEventListener("resize", resizeCanvas);
-    
-      // Add click functionality to floating bubbles
-      document.querySelectorAll('.bubble').forEach(bubble => {
-        bubble.addEventListener('click', () => {
-          const link = bubble.dataset.link;
-          window.location.href = link; // Navigate to the linked section or page
-        });
-      });
-  
-      // Burger Menu Toggle
-      const burgerMenu = document.getElementById('burger-menu');
-      const navLinks = document.getElementById('nav-links');
-  
-      burgerMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
-      });
-      const bubbles = document.querySelectorAll(".bubble");
-
-      document.addEventListener("mousemove", (event) => {
-        const mouseX = event.clientX;
-        const mouseY = event.clientY;
-
-        bubbles.forEach((bubble) => {
-          const rect = bubble.getBoundingClientRect();
-          const bubbleX = rect.left + rect.width / 2; // Bubble center X
-          const bubbleY = rect.top + rect.height / 2; // Bubble center Y
-
-          const deltaX = (mouseX - bubbleX) * 0.05; // Adjust multiplier for subtle effect
-          const deltaY = (mouseY - bubbleY) * 0.05;
-
-          bubble.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-        });
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
   </html>
   

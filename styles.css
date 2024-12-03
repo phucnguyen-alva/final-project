@@ -5,7 +5,7 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: black;
-  overflow: hidden; /* Prevent scrollbars */
+  overflow: hidden;
 }
 
 /* Canvas Styling */
@@ -13,64 +13,33 @@ canvas {
   display: block;
   width: 100vw;
   height: 100vh;
-  position: relative; /* Ensure it can be moved relative to its default position */
-  top: 60px; 
-}
-
-@keyframes bubbleColorCycle {
-  0% {
-    background-color: rgba(214, 179, 123, 0.2); /* Bubble 1 color */
-  }
-  25% {
-    background-color: rgba(152, 169, 140, 0.2); /* Bubble 2 color */
-  }
-  50% {
-    background-color: rgba(173, 153, 181, 0.2); /* Bubble 3 color */
-  }
-  75% {
-    background-color: rgba(238, 210, 174, 0.2); /* Bubble 4 color */
-  }
-  100% {
-    background-color: rgba(38, 222, 255, 0.2); /* Default / Bubble 7 color */
-  }
+  position: relative;
+  top: 60px;
+  animation: fadeIn 9s ease 8s forwards;
 }
 
 /* Center Text Container */
 #center-text-container {
   position: absolute;
-  top: 5%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   z-index: 10;
   text-align: center;
-
-  /* Glassmorphism Effect */
-  background-color: rgba(38, 222, 255, 0.2); /* Initial color */
-  backdrop-filter: blur(10px); /* Blur effect for glass-like appearance */
-  -webkit-backdrop-filter: blur(10px); /* For Safari support */
-  border-radius: 15px; /* Rounded corners */
-  padding: 20px; /* Space around the text */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  display: inline-block; /* Ensures the box wraps only the text */
-
-  /* Animation for Background Color */
-  animation: bubbleColorCycle 5s infinite alternate ease-in-out;
+  opacity: 0;
+  animation: fadeIn 1s ease 1s forwards, fadeOut 1s ease 4s forwards; /* Smooth fade in and out */
 }
 
-/* On Hover: Restart the Cycle */
-#center-text-container:hover {
-  animation: bubbleColorCycle 5s infinite alternate ease-in-out;
-}
 /* Center Text Typewriter Effect */
 #center-text {
   font-family: 'Georgia', serif;
   font-size: 1.8rem;
   color: #fff9f9;
-  white-space: nowrap; /* Prevent wrapping during animation */
-  overflow: hidden; /* Hide overflowing text */
-  border-right: 2px solid rgba(255, 255, 255, 0.75); /* Cursor effect */
-  width: 0; /* Start with no text visible */
-  animation: typewriter 4s steps(30, end) forwards, blink 0.5s step-end 4s;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  width: 0;
+  animation: typewriter 2s steps(30, end) 1s forwards, blink 0.5s step-end infinite; /* Adjusted timing */
 }
 
 /* Typewriter Animation */
@@ -79,11 +48,11 @@ canvas {
     width: 0;
   }
   to {
-    width: 100%; /* Matches the width of the text */
+    width: 100%;
   }
 }
 
-/* Blinking Cursor (ends after typing) */
+/* Blinking Cursor */
 @keyframes blink {
   from {
     border-right-color: rgba(255, 255, 255, 0.75);
@@ -93,62 +62,41 @@ canvas {
   }
 }
 
-
-/* After Typing */
-#center-text.finished {
-  border-right: none; /* Remove cursor completely */
+/* Fade-In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
+/* Fade-Out */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 
-/* Navigation Bar */
-.nav-bar {
+/* Brand Logo */
+#brand-logo {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 20;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: fadeIn 9s ease 7s forwards;
 }
 
-.burger-menu {
-  font-size: 2rem;
-  color: #ffffff;
+#brand-logo img {
+  width: 120px;
   cursor: pointer;
-  display: block; /* Always visible */
 }
 
-.nav-links {
-  list-style: none;
-  display: none; /* Hidden by default */
-  gap: 0;
-  position: absolute;
-  top: 40px;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 5px;
-  padding: 10px 0;
-}
-
-.nav-links.show {
-  display: block; /* Show menu when toggled */
-}
-
-.nav-links li {
-  text-align: right;
-  margin: 0;
-}
-
-.nav-links li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1rem;
-  font-family: 'Georgia', serif;
-  padding: 10px 20px;
-  display: block;
-  transition: background 0.3s ease;
-}
-
-.nav-links li a:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
 
 /* General Styling for Bubbles */
 .bubble {
