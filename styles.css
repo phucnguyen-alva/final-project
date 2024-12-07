@@ -89,14 +89,13 @@ canvas {
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
-  animation: fadeIn 9s ease 7s forwards;
+  animation: fadeIn 5s ease 7s forwards;
 }
 
 #brand-logo img {
   width: 120px;
   cursor: pointer;
 }
-
 
 /* General Styling for Bubbles */
 .bubble {
@@ -258,58 +257,161 @@ canvas {
   animation: fadeIn 2s ease 7s forwards; /* Fade in after 10 seconds */
 }
 
-/* Navigation Bar */
-.navbar {
+/* General Reset for About Page */
+body.about-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Add consistent box model */
+}
+
+/* Body Styling for About Page Only */
+body.about-page {
+  background: url(background.jpg), #131313;
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-y: bottom;
+  background-position-x: 130%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Container Styling */
+body.about-page .container {
+  width: 60%; /* Increased width for better alignment */
+  position: relative;
+  top: 15%; /* Adjusted to move the container down */
+  margin: 0 auto; /* Center container horizontally */
+  text-align: center; /* Center align text */
+  padding: 30px; /* Add some spacing */
+}
+
+/* Header Styling */
+body.about-page .container h1 {
+  font-weight: 600;
+  font-size: 3.5rem; /* Reduced font size */
+  color: white;
+  margin-bottom: 20px; /* Space below header */
+}
+
+/* Content Section with Gradient Animation */
+body.about-page .content {
+  width: 100%; /* Ensure content fills the container */
+  background: linear-gradient(135deg, #c80877, #212121, #1b1b1b, #042156); /* Gradient colors */
+  background-size: 300% 300%; /* Enlarge background for smooth animation */
+  animation: gradientAnimation 6s ease infinite; /* Apply animation */
+  border-top-right-radius: 30%; /* Rounded top-right corner */
+  padding: 30px; /* Add padding inside the content box */
+  box-sizing: border-box; /* Include padding in width/height calculation */
+  overflow-wrap: break-word; /* Ensure long words wrap */
+  word-wrap: break-word; /* Support for older browsers */
+}
+
+/* Gradient Animation Keyframes */
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+body.about-page .content p {
+  width: 90%; /* Adjusted width for better text alignment */
+  color: white;
+  line-height: 1.8em; /* Increased line spacing for readability */
+  font-size: 1.1rem; /* Adjusted font size */
+  text-align: justify; /* Justified text for a cleaner look */
+}
+
+/* Social Media Icons */
+body.about-page .social {
+  font-size: 2.5rem; /* Reduced icon size */
+  color: white;
+  margin-top: 30px; /* Space above icons */
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
+}
+
+body.about-page .social i {
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+body.about-page .social i:hover {
+  transform: scale(1.5); /* Slightly larger on hover */
+}
+
+/* Social Icon Colors on Hover */
+body.about-page .instagram:hover {
+  color: #dd2a7b;
+}
+
+body.about-page .twitter:hover {
+  color: #1da1f2;
+}
+
+body.about-page .linkedin:hover {
+  color: #0077b5;
+}
+
+body.about-page .youtube:hover {
+  color: #e62117;
+}
+/* Navigation Bar Links */
+body.about-page .navbar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: #042156; /* Deep blue */
-  padding: 30px 40px;
+  background-color: #042156; /* Deep blue background */
+  padding: 10px 20px;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 100; /* Ensure it appears above other elements */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  z-index: 100; /* Ensure it appears above all other elements */
 }
 
-.nav-link {
-  color: #ffffff; /* White text */
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-right: 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+body.about-page .nav-link {
+  color: white; /* White text for links */
+  text-decoration: none; /* Remove underline */
+  font-size: 1rem; /* Adjust font size */
+  font-weight: 500;
+  padding: 10px 15px; /* Add padding for a button-like appearance */
+  margin-right: 10px; /* Space between links */
+  border-radius: 20px; /* Rounded corners */
+  background-color: transparent; /* Transparent background */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
-.nav-link:hover {
-  background-color: #c80877; /* Bright pink hover effect */
-  color: #ffffff;
-  border-radius: 5px;
+body.about-page .nav-link:hover {
+  background-color: #c80877; /* Bright pink on hover */
+  color: white; /* Ensure text stays white */
+  transform: scale(1.05); /* Slight hover scaling */
 }
 
-.nav-link.active {
-  color: #ffffff;
-  border-radius: 5px;
-}
 
-/* Main Content for About Page */
-.main-content {
-  padding: 80px 20px; /* Offset for fixed navbar */
-  color: #ffffff;
-  font-family: 'Georgia', serif;
-}
 
-.about-section h1 {
-  text-align: center;
-  color: #c80877; /* Bright pink */
-  margin-bottom: 20px;
-  padding: 20px;
-}
 
-.about-section p {
-  max-width: 700px;
-  margin: 10px auto;
-  text-align: justify;
-  line-height: 1.6;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  body.about-page .container {
+      width: 90%; /* Full width on smaller screens */
+      top: 10%; /* Adjust top margin */
+  }
 
+  body.about-page .container h1 {
+      font-size: 2.5rem; /* Smaller heading for mobile */
+  }
+
+  body.about-page .content p {
+      width: 100%; /* Full width for smaller screens */
+      font-size: 1rem; /* Smaller font for readability */
+  }
+
+  body.about-page .social {
+      font-size: 2rem; /* Smaller icons */
+  }
+}

@@ -39,6 +39,7 @@ const riveInstance = new rive.Rive({
   },
 });
 
+
 // Resize canvas to fit the viewport
 function resizeCanvas() {
   canvas.width = window.innerWidth;
