@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fox in the Flowerbed</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+  <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="stories">
+  
+  <div class="button-container-stories">
+    <a href="../index.html" class="button-stories">Trở về Trang Chủ</a>
+    <a href="../stories/Slow_Explosions.html" class="button-stories">Đọc bằng tiếng Anh</a>
+  </div>  
+
+  <article>
+    <header>
+      <h1 class="stories">Cú nổ chậm</h1>
+      <p class="subtitle">Yểng bảo căn tính là những vạch đường đã có sẵn khiến dòng xe ngược xuôi thuận mắt.</p>
+    </header>
+
+    <canvas id="riveCanvas"></canvas>
+    <script>
+      // Initialize the Rive animation
+      const canvas = document.getElementById("riveCanvas");
+    
+      const riveInstance = new rive.Rive({
+        src: "../animation/fox_flowerbed.riv", // Path to the Rive file
+        canvas: canvas,
+        autoplay: true,
+        artboard: "fox 2", // Specify the artboard
+        stateMachines: ["State Machine 1"], // State machine in the Rive file
+        fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Adjust canvas size on load
+        },
+      });
+    
+      // Adjust the canvas size to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    
+      // Listen for window resize events to dynamically adjust the canvas
+      window.addEventListener("resize", resizeCanvas);
+    </script>
+
+    <section>
+      <h2>Những phân tử lơ lửng trong không gian không theo một trật tự nào.</h2>
+      <p>Tôi ngắm nhìn chúng, giương đôi mắt đờ đẫn, chân nhịp nhẹ nhàng. Mặt trời đang lắng xuống phía sau những toà cao ốc. Nội thành, một cảm giác thấp thỏm giữa không trung. Yểng kể tôi nhiều lần về chỗ ngồi này, chính xác một góc 17 giờ tầng 5 của quán cà phê giữa góc quanh co một đại lộ. Yểng quen nhìn con đường chảy ngập trong vị mật ong, chanh gừng, nóng hổi, dưới trời hè mát mẻ. Em giương mắt nhìn quãng xe cộ cắt nhịp đổ ùa vào nhau, lắng tai nghe tiếng chuyện trò từ muôn vàn sắc thái của cuộc đời và ngửi mùi bụi mịn thoang thoảng trong không gian.
+    </p>
+
+      <p>Máy bay của Yểng đã rơi đâu đó trên một đại lộ tại một thành phố cách nửa địa cầu. Nó rơi như cách toà nhà ngày 9/11 một năm không xa tạo nên dư chấn trong tiềm thức xã hội này. Và trong một dòng ghi chú nhỏ, chỉ hai người là đã đủ tạo thành mầm mống một xã hội. 
+    </p>
+
+      <p>Thật kỳ lạ. Tôi và Yểng gặp nhau ở những giao điểm, không chỉ một. Cả hai cùng trò chuyện trên chuyến bay đến vùng Trung Á không tách rời mình khỏi bất kì kết nối nào. Mọi quốc gia đều đổ dồn vào trung tâm của thế giới. Chúng tôi gặp nhau ở những giao điểm của tiếng mẹ đẻ, của cơn buồn không muốn ngủ, những giờ vật vờ trên chuyến bay dài, những man mác xốn xang trên đường quay tìm lại những giá trị cũ tại quê hương. Những giao điểm như một cú nổ chậm, dồn nén rồi ứ đọng những phân mảnh phóng tứ tung. 
+    </p>
+
+      <p>Yểng bảo có ngày em sẽ tái thiết lại căn tính của một thành phố. Đó là những hoài bão em ấp ủ trên những chặng bay, kể cả thân xác vật lý đến những mơ tưởng trong tinh thần. Em cho rằng con phố này quá đỗi lộn xộn với những chặng xe không thành hàng, những cú rẽ ngoặc lạ đời, và những giờ cao điểm tắc ùn đến ngạt thở. Tôi hỏi Yểng liệu thế nào mới là một căn tính hoàn chỉnh, liệu em đã là tất cả với cái tên của mình hay ngược lại. Yểng không trả lời, chỉ nhìn tiếp, và chỉ vào những vạch trắng vàng vẽ trên đường. Yểng bảo căn tính là những vạch đường đã có sẵn khiến dòng xe ngược xuôi thuận mắt. Nhưng căn tính cũng là những chuyến xe đăm toạc khỏi những vạch va vào nhau và nổ tung. Căn tính là những người đi bộ chạy vội khỏi danh xưng của mình để trở nên bất động giữa con đường. Căn tính là những bụi tử phả vào gương mặt chăm chú nhìn vào những chuyển động trước mặt và phớt lờ sự tĩnh tại sau lưng. 
+    </p>
+
+      <p>Điều đó làm tôi nghĩ rằng căn tính là những khuôn khổ gàn rỡ bị phá bỏ. Nhưng Yểng không mảy may đồng ý. Không phải em đã nói thành lời rằng tôi sai, nhưng thực giá như em đã nói điều đó thành lời thay vì bằng chứng dấu chấm của mình. Yểng nhìn cuộc đời như một tác phẩm văn học. Tất cả chỉ có ý nghĩa khi tác giả đã chết đi. Một cái chết ẩn dụ hay một cái chết thực chẳng mấy quan trọng. 
+    </p>
+
+    <p>Tôi cũng thử hình dung, khi đèn đường rực sáng và những đường gạch vẽ mờ mịt trong bóng đêm. Một chiếc máy bay đâm sầm xuống tạo thành một lỗ đen bí ẩn. Là vì những gạch vẽ vô hình đồng dạng với khoảng trống ký hiệu trên bầu trời, hay vì lỗ đen đã luôn có sẵn như một từ trường. Yểng sẽ nói gì khi chứng kiến cảnh tượng đó? Chắc em sẽ không nghi ngại gì mấy về vị thế và trải nghiệm sống của mình ở thời điểm ấy. Em đã không ngồi trên những ngờ vực và sẵn sàng phân tích tôi nghe những quan sát em nhận thấy.        
+    </p>
+
+    <p>Nhưng cuối cùng tất cả đều là những giả định. Chẳng có một cú nổ nào diễn tiến trên con đường bật sáng đèn như đom đóm lượn vòng. Mặt trời vẫn lặn. Sự tấp nập dàn trải. Những phân tử ký ức lơ lửng trong đầu tôi cũng mờ mịt như những gạch trắng trong lời kể của Yểng. 
+    </p>
+    <p>Những cú nổ chậm diễn ra bởi những rung động ở nửa đầu còn lại của địa cầu.
+    </p>
+
+    </section>
+
+    <div id="other-stories-container">
+      <h2>Other Stories You Might Enjoy</h2>
+      <ul id="other-stories-list">
+        <li><a href="/stories_vn/Cape_Heartache.html">Mũi Đất Đau Lòng</a></li>
+        <li><a href="/stories_vn/Fox_Flowerbed.html">Sương Mù Ngày Cũ có Con Cáo trên Giường Hoa</a></li>
+        <li><a href="/stories_vn/Love_Everything.html">Trong Tình Yêu với Mọi Thứ</a></li>
+        <li><a href="/stories_vn/Memoirs_Trespasser.html">Hồi ức Kẻ Xâm Phạm</a></li>
+        <li><a href="/stories_vn/Saint_Julep.html">Thánh Julep</a></li>
+        <li><a href="/stories_vn/Waffle_Cone.html">Thoảng Vị Ốc Quế</a></li>
+      </ul>
+  </div>
+
+  </article>
+
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memoirs of the Trespasser</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+  <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="stories">
+  
+  <div class="button-container-stories">
+    <a href="../index.html" class="button-stories">Return to Homepage</a>
+    <a href="../stories_vn/Memoirs_Trespasser.html" class="button-stories">View in Vietnamese</a>
+  </div>  
+
+  <article>
+    <header>
+      <h1 class="stories">Memoirs of the Trespasser</h1>
+      <p class="subtitle">What is the name for this feeling? The endless pursuit of something to consume—not from hunger, but to swallow time itself.</p>
+    </header>
+
+    <canvas id="riveCanvas"></canvas>
+    <script>
+      // Initialize the Rive animation
+      const canvas = document.getElementById("riveCanvas");
+    
+      const riveInstance = new rive.Rive({
+        src: "../animation/fox_flowerbed.riv", // Path to the Rive file
+        canvas: canvas,
+        autoplay: true,
+        artboard: "fox 2", // Specify the artboard
+        stateMachines: ["State Machine 1"], // State machine in the Rive file
+        fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Adjust canvas size on load
+        },
+      });
+    
+      // Adjust the canvas size to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    
+      // Listen for window resize events to dynamically adjust the canvas
+      window.addEventListener("resize", resizeCanvas);
+    </script>
+
+    <section>
+      <h2>Summer’s heat pierced through the glass, golden sunlight splitting the air.</h2>
+      <p>Sweat streamed down Dót’s skin, soaking the torn patches of his tattered shirt. His sturdy hands glided over me, gentle but absent-minded. He was already thinking about where his lips would touch next. In just a moment, his long fingers would reach inside me, extracting something that would let him savor the fleeting pleasures of life. His body exuded the sharp tang of sweat, mingled with the distinct, familiar scent of humanity. His neck, sinewy and taut, moved in a rhythm as his Adam’s apple bobbed—a cadence of survival, of being alive.
+
+    </p>
+
+      <p>Dót opened me with care, deliberate and thorough. A stream of thick, white milk spilled onto his chest. The milk he’d left inside me had now poured back onto him, just as his throat burned with an unspoken longing for relief. He reached for a cup of tea beside me and closed my door with the same ease. Tissue in hand, he wiped himself clean. The cold breeze that had spilled from within me returned to wrap itself around its source. I was always cold, always waiting for those few moments when Dót would come, stirring my frozen core into something resembling feeling. But he always left in a hurry. In the fluid motion of his life, there was no reason for him to linger with the inertness of an object that took up a corner of his room.
+
+    </p>
+
+      <p>I’ve watched Dót open many things before me. Things more alive—things with teeth and joints that moved with him. It wasn’t just his throat that danced to the rhythm of his sinewy neck but other parts of his body and other objects he interacted with. Somehow, through some uncanny means, Dót always found a way to satisfy his encounters with them. He was rough, almost brutal, in his pursuit of pleasure. So different from the soft, delicate name he carried, a name that seemed to belie the ferocity of his desires. Names didn’t matter, though. Nothing around him bore its rightful title. Surely, he couldn’t call me anything but “the fridge”—a vessel for holding the remnants of his cravings, a tool to slow down time so he could savor fragments of a distant past.
+
+    </p>
+
+      <p>If only he could see that what’s preserved is everything, and that I am part of that preservation. If only he could see me as something useful. Then perhaps he wouldn’t allow invaders to slip away with pieces of himself, into the abyss of his memory. Doesn’t he fear they’ll take something irreplaceable from him? Doesn’t he worry they’ll steal all the tea and milk he’s entrusted to me? Yet Dót seemed so indifferent when he brought new objects into his life, right in front of me. Did they, in their fleeting existence, ever notice me—watching his every gesture with silent intensity?
+
+    </p>
+
+      <p>Night fell, the stars flickering their ancient light through the window. Dót lay naked on the couch, the fan brushing over his skin. In the stillness of the city night, the apartment fell into darkness. A power outage. Inside me, I felt a strange buzz, a loss of the cold that Dót had always needed from me. In the dark, I saw him move, restless in his own skin. Perhaps I forgot to mention this: Dót also used his hands to unlock the mysteries within himself. But I seldom witnessed this. It made me uneasy, this guilty knowledge that every being could achieve divinity alone. I always needed Dót to touch me, to release the light trapped inside me.
+
+    </p>
+
+      <p>Now, with the power gone, the coldness inside me began to waver. Heat pulsed through my body as molecules broke free from their confines. Was this what Dót meant when he described his loneliest days? Was it why he opened my door every few minutes, searching for something to fill himself with again? What is the name for this feeling? The endless pursuit of something to consume—not from hunger, but to swallow time itself. There’s a strange beauty in it, this mixture of loneliness and chaos. Sometimes, I call it love—a mix of bananas, chocolate, yogurt, durian, cold cuts, coffee, and cake. Ingredients haphazardly chosen, but they stir something strange and alive within.
+    </p>
+
+    <p>Dót still lay on the couch, his hands moving restlessly over his skin. I imagined, in just a moment, those hands would reach for me, expecting the coldness they knew. But what if I had grown warm? What would he think? As I slowly unraveled from my essence, I watched Dót reveal the deepest parts of himself. Depths so profound that, perhaps in some forgotten epoch, he and I were once part of the same body. Or perhaps that epoch has yet to come.
+    </p>
+
+    <p>After a long, draining moment, he reached for a jar of smooth yogurt, swallowing it in one gulp. He consumed what he had stored inside me. Then, at last, he came to me, just as I imagined. He opened me with those same hands, but this time, he tore through me with ferocity, grabbing everything within. My contents clattered to the floor in a chaotic chorus. Dót said nothing; he only acted. As he searched me, I felt a strange lightness. And then, silently, he climbed inside me. He shut my door, letting me enclose him with the unfamiliar warmth now blooming within me. For the first time, I held him—not in cold indifference but in an embrace as warm as my own failing essence. Together, we moved in rhythm with the distant stars.
+    </p>
+
+    <p>By morning, my door was ajar. Dót was gone. No warmth, no cold, just an ordinary emptiness. Around me, I saw my companions—worn, broken, abandoned. We exchanged glances of shared pity, mourning days long past. On this hillside of forgotten things, none of us could fulfill our purpose anymore. Dót had deemed me useless. He no longer saw the suffering of a refrigerator. He no longer placed his desires inside me.
+    </p>
+
+    <p>Dót had forgotten the memoirs of a trespasser.
+    </p>
+
+    </section>
+
+    <div id="other-stories-container">
+      <h2>Other Stories You Might Enjoy</h2>
+      <ul id="other-stories-list">
+        <li><a href="/stories/Cape_Heartache.html">Cape Heartache</a></li>
+        <li><a href="/stories/Fox_Flowerbed.html">Fox in the Flowerbed</a></li>
+        <li><a href="/stories/Love_Everything.html">In Love with Everything</a></li>
+        <li><a href="/stories/Saint_Julep.html">Saint Julep</a></li>
+        <li><a href="/stories/Slow_Explosions.html">Slow Explosions</a></li>
+        <li><a href="/stories/Waffle_Cone.html">A Whiff of Waffle Cone</a></li>
+      </ul>
+  </div>
+
+  </article>
+
+
+</body>
+</html>

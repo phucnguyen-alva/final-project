@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thánh Julep
+</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+  <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="stories">
+  
+  <div class="button-container-stories">
+    <a href="../index.html" class="button-stories">Trở về Trang Chủ</a>
+    <a href="../stories/Saint_Julep.html" class="button-stories">Đọc bằng tiếng Anh</a>
+  </div>  
+
+  <article>
+    <header>
+      <h1 class="stories">Thánh Julep</h1>
+      <p class="subtitle"> Mái đầu anh đã bạc óng những cọng tóc phai theo thời gian. Nhưng tôi chẳng biết được tình cảm đậm sâu trong anh như thế nào.
+    </p>
+    </header>
+
+    <canvas id="riveCanvas"></canvas>
+    <script>
+      // Initialize the Rive animation
+      const canvas = document.getElementById("riveCanvas");
+    
+      const riveInstance = new rive.Rive({
+        src: "../animation/fox_flowerbed.riv", // Path to the Rive file
+        canvas: canvas,
+        autoplay: true,
+        artboard: "fox 2", // Specify the artboard
+        stateMachines: ["State Machine 1"], // State machine in the Rive file
+        fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Adjust canvas size on load
+        },
+      });
+    
+      // Adjust the canvas size to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    
+      // Listen for window resize events to dynamically adjust the canvas
+      window.addEventListener("resize", resizeCanvas);
+    </script>
+
+    <section>
+      <h2>Mùa hè vắng.</h2>
+      <p> Nắng lọt qua khung cửa sổ với những lời râm ran. Khói len lỏi qua từng kẽ răng từ cốc cà phê nâng nhẹ lên môi. Vị đắng đậm làm người anh va đập vào những hạt nổi trong không trung, qua chiếc khung mà ánh nắng đóng lại. Anh nhìn về cửa quán đối diện. Cỏ bên hành lang kia vẫn luôn xanh hơn. Họ điểm xuyến chúng cùng những chậu hoa hồng rực rỡ dưới ánh sáng mặt trời. Một khung cảnh sáo rỗng nhưng vẫn nhấn được những cao độ và nhịp vắng trong lòng. 
+
+    </p>
+
+      <p>Cốc cà phê với những vòng xoáy luân chuyển. Anh không đưa mắt nhìn vào tâm điểm của nó. Nhưng ánh mắt của nó luôn chằm chằm ngước nhìn những cái chau mày khe khẽ của anh. Chưa bao giờ bầu trời đặc đậm màu nâu trầm. Nhưng đã có những lúc nó hiện thân mình cùng những vòng xoáy làm anh suy tư. Những vòng xoáy theo chính nghĩa của nó. Khi con người trú ngụ giữa những khung cửa họ dựng thành và mong rằng cầu vồng sẽ đến. Anh nhìn thấy cầu vồng trong những tia nước rải mình dưới ánh nắng rọi vào góc hành lang bên kia đường. 
+
+
+    </p>
+
+      <p>“Cậu không ngồi đó mãi được đâu. Ông chủ không muốn phiền lòng.""
+ 
+
+    </p>
+
+      <p>“Nhưng tớ cũng không muốn."" - ánh mắt anh vẫn chăm chú điểm từng nhịp rơi của tia nước.
+
+
+    </p>
+
+
+      <p>Cửa tiệm ăn sáng ngập khách dưới một bầu trời. Không có mái nhà, không có những ánh đèn hay hạ tầng của suy nghĩ. Thực tại ấp đầy bởi những giọng nói vọng lại và tiếng nhạc ủ ấp mùi hương của khu bếp.
+
+
+    </p>
+    <p>"Cửa tiệm lốc xoáy vỡ tung mái nhà"
+    </p>
+    <p>Không phải là cái tên đầu tiên. Không đặc biệt. Chưa chắc là cuối cùng và là duy nhất. Nhưng đó là tất cả những gì thực tại mang đến.
+
+    </p>
+    <p> "Cậu đang nhìn theo Julep à?" - Ông chủ vừa châm đầy ly cà phê cho anh vừa tọc mạch hỏi thăm. 
+
+    </p>
+    <p>Anh không trả lời, nhưng đôi mắt đã chuyển dần từ bụi cây dại xanh sang đến cửa sổ của tòa nhà đối diện. Một người thiếu nữ trẻ trung với mái tóc cài một nhành bạc hà đang xách những thỏi sô cô la đậm ngọt trưng bày trên từng cửa tủ. Anh dõi theo từng chuyển động của cô, mượt mà và sóng sánh như những quả cacao được ép dẻo trong máy nghiền. Cái tên Julep khiến lòng anh xốn xang như rơi từ điểm cao nhất của một chuyến đi tàu lượn trong công viên giải trí. Ông chủ không hỏi thêm gì, chỉ để lại anh cùng ly cà phê và chiếc tạp dề. 
+    </p>
+
+      <p>"15 phút là cửa tiệm mở cửa. Cậu nhấm nháp cho hết ly rồi quay lại tiếp khách đó.”
+
+    </p>
+
+      <p>Anh chỉ gật gù theo lời nói của ông, nhưng tâm tưởng anh thì vẫn còn lênh đênh vượt qua những bức tường mà chăm chú dõi theo bàn tay thon gọn cầm những thỏi sô cô la. Đoạn những vòng xoay trong cốc cũng cạn. Anh quay về với cái nốc nhà đã biến mất của cửa tiệm sau một lần lốc xoáy đánh vỡ vài tuần trước. Kể từ hôm ấy, cửa tiệm này độc quyền với tên gọi hút khách. Cũng chỉ vì ông trời thết đãi chưa một lần đổ ào xuống một cơn mưa nào mà họ vẫn còn cái cớ để giữ lấy trải nghiệm độc đáo này. Nhưng cũng chính vì vậy mà cửa tiệm chỉ buôn được những bữa ăn sáng vào ngày trời nhiều mây và chút nắng nhẹ. Họa may lắm nó cũng mở thêm được những đêm không buốt lạnh mà mát mẻ thư thả của tiết hè. Dẫu sao ông chủ và anh vẫn thích cái cảm giác không có mái nhà. Nó mang đến một sự tự do bất tận khi mà những suy nghĩ có thể phóng chiếu dễ dàng lên bầu trời rợp mây kia mà không bị giam giữ tù túng trong một góc nào. 
+
+
+    </p>
+    <p>"Cho tôi bàn bốn người. Trứng ốp la theo kiểu thường ngày và…"
+
+    </p>
+    <p>"Theo kiểu 'cửa tiệm không mái' hay 'có mái' vậy thưa bà? Lần cuối cùng chúng tôi phục vụ theo kiểu “thường ngày” đã được thay đổi. Không biết bà…"
+
+    </p>
+    <p> "Theo kiểu 'thường ngày' thôi. Tôi không cầu kỳ." 
+
+    </p>
+    <p>Anh gật đầu mời họ vào bên trong. Điều khác biệt duy nhất khi bước vào cửa tiệm này là đi qua một ô cửa nhỏ với bức tường ngăn cách. Ngoài ra, không gian của cửa tiệm, một lần nữa, chẳng có gì tách bạch mấy so với thế giới bên ngoài. Cũng vì vậy mà người ta không rườm rà phân biệt nơi đây với dòng chảy đời sống ngoài kia. Trong lúc đợi những thực khách có tuổi đến thăm quán, và dĩ nhiên là gọi chút gì đó cho vào bụng, anh lại đánh đôi mắt mình về bụi cỏ xanh rờn bên đường đối diện. Julep cũng đã đẩy chiếc xe cacao nóng và cà phê ra ngoài để bán cho những vị khách trẻ trung hơn trên con đường đi làm của mình. Đôi gò má của anh hơi râm ran khi nhìn thấy tên diện đồ suit đến mua cacao của cô như thường lệ. Vẫn theo lẽ thường, dù là mái nhà còn hay đã mất, hắn vẫn đến cửa tiệm của Julep đầu tiên mỗi sáng chỉ để mua một cốc cacao. Nhưng hắn anh mặc vẫn rất bảnh. Nào là giày Tây với những bộ comle hay suit chỉn chu. Để làm gì? Chẳng một ai biết ngoài chính hắn. Nom hắn rất lịch lãm và dường như có một công việc tài chính ổn định. Hắn còn có đôi mắt xanh dương. Anh đoán vậy, qua cái cách mà màu trời và nắng chiếu rọi trong đôi mắt của Julep. Nhưng liệu có phải là như vậy hay không? Anh không chắc được. Dẫu vậy Julep vẫn cười với hắn thật tươi và luôn có sẵn cốc cacao gửi hắn trong tích tắc. Dường như cô cũng đợi hắn mỗi ngày để trao gởi cốc cacao ấy. Giống như một nụ hôn ban sáng vợ gửi chồng và chờ đợi nửa kia của mình hồi đáp nơi tối muộn. Nhưng họ có hồi đáp với nhau vào tối muộn hay không? Anh cũng không rõ. 
+    </p>
+    <p>“Nếu làm tôi phỏng thì đừng quanh quẩn trong đây." 
+
+    </p>
+    <p>Giọng nói khàn đặc lòm lọm của một cụ già khiến anh quay trở lại vị trí của mình. Trên tay anh vẫn đang cầm chiếc bình cà phê đổ vào ly của khách. Anh đã kịp nghiêng nó trở lại. Chỉ một giọt nữa thôi, mọi thứ tràn khỏi cái ung dung tĩnh tại của nó. Chỉ một giọt nữa thôi, anh thầm nhủ, Julep sẽ không còn là bụi cỏ xanh rờn trong mắt anh bên kia con đường. 
+
+    </p>
+    <p>Hoàng hôn kéo đến. Cửa tiệm của anh vẫn đều đặn những lượng khách vào ra không ngớt. Anh chạy bàn liên tục với những lời mời chào và câu hỏi lặp đi lặp lại như đã được lập trình sẵn. Duy chỉ có một ánh mắt thoáng qua khiến cái vòng lặp của anh bị phá vỡ trong tích tắc. Từ phía bãi cỏ xanh rờn đối diện, nơi mà anh vẫn luôn đánh mắt về mỗi đôi ba phút một lần, Julep đang tiến đến cửa quán anh. Gương mặt anh nở một nụ cười rạng rỡ trong thoáng chốc. Thế nhưng anh cũng mau chóng nhận ra bàn tay cô đang nắm lấy tay của ai đó bị che khuất bởi góc cột chỗ anh đứng. Julep không màng lắm về tiếng gọi của khách hàng í ới xung quanh. Anh chuyển động vài bước sang phải và nhìn thấy người đàn ông diện suit vào buổi sáng, nhưng lần này hắn đã mặc một bộ suit hoàn toàn khác. Quái lạ, anh nghĩ, chẳng hiểu vì sao hắn lại có nhiều bộ suit như thế. Kì hoặc hơn, Julep lại đi cùng hắn đến thưởng thức một bữa ăn tối. Như thế chẳng khác gì một cuộc hẹn hò và ai mà biết được điều gì sẽ xảy ra sau những bữa ăn lãng mạn như vậy. 
+
+    </p>
+    <p>Julep đến vẫy tay chào ông chủ, tay còn lại nắm lấy tay và ép sát người gã đàn ông kia. Anh đứng nhìn thêm vài giây trước khi bị một vị khách giựt hẳn tay áo khiến anh phải chuyển dời sự chú ý lại về những khách hàng của mình. Nhưng chút ít nữa thôi, Julep cũng sẽ trở thành khách hàng của anh. Chút ít nữa thôi, anh cũng có quyền được chăm sóc cho Julep và có thể là sẽ hỏi cho ra lẽ mối quan hệ của hai người đó là gì. Dẫu vậy, anh cũng hiểu, những câu hỏi như vậy là quá đỗi riêng tư và một bồi bàn thì không có nghĩa lý gì để biết. 
+
+    </p>
+    <p>"Cho tôi hai cốc vang trắng" - Julep nhìn anh mỉm cười khi anh tiến đến bàn của cả hai. Cô chẳng biết anh là ai. Julep chưa bao giờ gặp và trò chuyện trực tiếp với anh. Chỉ có anh là mãi mơ tưởng và hình dung về cô trong lòng mình. 
+    </p>
+
+    <p>"Xin lỗi cô. Vang trắng bên chúng tôi đã hết, cả vang đỏ cũng vậy. Hiện giờ chúng tôi chỉ còn nước ép trái cây và trà lạnh." 
+    </p>
+    <p>Julep nhìn gã diện suit như chực chờ một tín hiệu đồng ý, nhưng hắn không làm gì, vẻ mặt chỉ lạnh lùng, thờ ơ, lãnh cảm.
+    </p>
+    <p>"Thật lạ. Cửa tiệm anh cũng chỉ vừa mở cửa tầm một tiếng đổ lại mà đã hết rượu sao?"
+    </p>
+    <p>Anh đã nói dối Julep và gã ấy. Cửa tiệm anh dĩ nhiên là còn rất nhiều rượu nhưng anh không muốn để hai người cùng say với nhau và làm điều gì đó mất kiểm soát. Anh muốn giữ lại cơ hội cho mình. Anh muốn giữ lại chút ít sự ích kỷ trong tình yêu. Sau cuộc trò chuyện ngắn ngủi ấy, anh rời khỏi bàn Julep để đốc thúc bếp trưởng hoàn thành món ăn chậm hết mức có thể. Miễn Julep vẫn còn trong tầm quan sát, anh yên tâm để cô ngồi cùng tên kia.
+    </p>
+    <p>Sau hơn ba mươi phút, món ăn đầu tiên của cả hai được dọn lên. Anh vẫn giữ vẻ mặt niềm nở nhưng kín đáo. Khoai tây nghiền thắm đẫm sốt bò thơm phức cả cửa tiệm. Thế nhưng ngay lúc Julep bắt đầu múc những muỗng đầu, cô cảm nhận được từng giọt lã chã trên dĩa đồ ăn và trên khắp cơ thể. Trời đã trĩu những hạt mưa xuống cửa tiệm không có mái nhà của anh. Julep và gã diện đồ suit nhanh chóng rời khỏi cửa tiệm, để lại đôi mắt của anh dõi theo từng vũng lầy dao động. 
+    </p>
+    <p>Anh quyết định hôm sau đóng mái nhà cho một cái bàn đơn. Không nói không rằng, anh vác búa, đinh, và lỉnh kỉnh những đồ nghề vất vưởng trên những cột trụ còn sót lại và đóng một tấm che trên cái bàn đôi hôm qua Julep ngồi với gã trai. Anh đóng mọi thứ trong khoảng thời gian tiếng lộp cộp vọng vào giấc ngủ của những ngôi nhà xung quanh. Tới lúc anh hoàn thành, mặt trời dần rọi những tia sáng phả vào bức tường của những tòa nhà. Ông chủ của anh đến nhưng cũng không để tâm lắm đến cái mái nhà nhỏ trên đầu. Kì thực, ông cũng chẳng đoái hoài mà ngước nhìn lên phía trên. Ông cứ thong thả như những ngày thường mà chào đón khách đi vào. Sáng hôm đó trên môi anh cứ mải nhoẻn cười một niềm hạnh phúc giấu giếm thâm sâu. Anh giữ thói quen ngước nhìn lấy dáng vẻ của Julep bên kia đường. Cô cũng vui vẻ chào đón từng vị khách bước vào cửa tiệm sô cô la thơm lừng của mình. Anh vẫn hay mơ tưởng một ngày cả hai cùng cười với nhau. Julep sẽ đút anh ăn một thỏi sô cô la vị bạc hà mát đậm giống như vườn tược trước cửa tiệm cô. Cả hai sẽ ngắm cầu vồng sau cơn mưa với tay trong tay sát kề. Anh không để những mơ mộng của mình bị ngắt quãng trong lúc làm việc. Mỗi khi một vị khách mới bước vào, anh mỉm cười với họ cùng lúc tưởng tượng gương mặt Julep ẩn hiện trên những người lạ. 
+    </p>
+    <p>Buổi tối đến, anh dẫn khách vào những chiếc bàn khác với cái bàn có mái hiên che. Cửa tiệm sô cô la đã tắt đèn. Anh nôn nao không để ai khác đón khách vì sợ người lạ sẽ ngồi lấy cái bàn anh đã chuẩn bị sẵn cho Julep. Nhưng mãi, anh chẳng thấy Julep đâu. Ngày hôm sau, anh đóng thêm mái nhà cho hai cái bàn đơn. Ngày kế tiếp, bốn chiếc bàn đơn được đóng. Ngày tiếp nữa, tốc độ đóng bàn giữ nguyên với trước đó. Ngày sau đó, hơn nửa cửa tiệm đã được che phủ bởi mái. Phần còn lại là những chiếc bàn đôi hoặc bàn tư được gộp lại. Anh vẫn chưa thấy Julep đâu cả. 
+    </p>
+    <p>Cửa tiệm sô cô la của Julep đã chẳng sáng đèn gần một tuần qua. Gương mặt anh chẳng vương vấn nụ cười nào. Anh trở nên thất thểu. Nhưng trong không gian thoang thoảng mùi bạc hà ngòn ngọt. Một mùi hương trong chốc lát khiến anh vô thức hạnh phúc trở lại. Anh ngước mắt nhìn người đứng trước mặt. Julep. Cô đang đối diện chờ anh xếp một vị trí thật đắc địa, và dĩ nhiên, cùng gã trai diện suit trong thật bảnh.
+    </p>
+    <p>Anh đứng cạnh bàn cả hai để chờ ghi những món ăn cho đầu bếp. Nhưng cả cơ thể của anh cứ nhịp nhàng chuyển động không thôi. Đôi mắt anh thi thoảng lại liếc nhìn những phân tử mùi hương đậm vị bạc hà lơ lửng trong không trung, nhìn vào mắt môi Julep, nhìn vào cả con người cô chỉ trong vài thoáng vô tình thay đổi góc mắt. Gã diện suit không để tâm đến anh nhiều. Gã đang bận lướt ngón tay trên từng món ăn để tìm xem đâu là thứ đắt đỏ nhất nhà hàng này. Gã muốn trao đi trước khi nhận lại được thứ gì đó từ Julep. Dĩ nhiên, thứ đó là tinh dầu hảo hạng từ người cô. Bạc hà Julep luôn mang đến một sự khoan khoái với những nốt hương ngọt ngào. 
+    </p>
+    <p>Anh ghi nhận đủ số món ăn thì rời khỏi bàn. Đâu đó bỗng vọng lại tiếng rào rạc không ngớt, chừng như là tiếng nước mưa va trên hiên nhà. Anh hốt hoảng nhìn lên trên cùng để tìm xem đâu là chiếc bàn xấu số sẽ phải hứng lấy cơn mưa bất chợt vào tối muộn. Anh đã đóng hiên nhà cho tất cả các bàn, trừ một cái bàn đôi riêng lẻ. Cuối cùng, cái bàn đó lại là nơi mà Julep và gã bảnh trai đang an tọa. Tiếng rào rạc cứ vọng lớn dần. Anh vội lấy cây dù, bật nó ra, và tiến những bước thật nhanh đến gần chiếc bàn của Julep. Nhưng lạ kì thay, mọi ánh mắt đều đổ dồn vào anh với một sự chất vấn. Mọi người chẳng hiểu anh đang làm gì. Kể cả chính anh. Đến được cạnh bàn, tiếng rào rạc vẫn lớn dần, nhưng anh chẳng thấy có một giọt mưa nào rơi từ giếng trời xuống. Anh ngó nhìn xung quanh thì thấy mọi người nhìn anh rồi chớp nhoáng quay về bữa ăn của mình. Chẳng có một cơn mưa nào phá bĩnh cuộc hẹn của họ, anh thầm nghĩ. Chỉ có những con ngựa đang dặm từng bước chân xao động xuống lòng đường và làm rung rinh những mặt kính. Gã bảnh trai và Julep mỉm cười trước khi hắn bảo anh vào trong chuẩn bị giúp một ly cocktail Julep. 
+    </p>
+    <p>Anh gật đầu quay người vào trong không lời hồi đáp. Một ly nước với tên gọi người anh thương chẳng khó khăn mấy để anh chuẩn bị. Anh tẩn mẩn cầm từng cành bạc hà đâm giã chúng đến khô cằn để chiết từng giọt tinh dầu ngào ngạt hương thơm. Nhưng điều bất ngờ xảy đến khi anh mang ly cocktail đó trở lại bàn. Tiếng vó ngựa đã dịu lại trả lại bầu không khí tĩnh tại và lãng mạn với chút nến vàng của quán. Gã bảnh trai đang quỳ một gối trước Julep. Đôi tay hắn mở trước cô một cánh cửa với chiếc nhẫn là vòng tròn vô cực của hôn nhân. Anh cũng đã nhiều lần tưởng tượng mình ở trong vị thế đó, nhưng thay cho chiếc nhẫn, anh chỉ có ly cocktail đồng dạng với cô rất nhiều. Bất chợt, Julep nhìn anh. Ít nhất đó là một ánh nhìn khó xử hoặc đầy rẫy những lo lắng, nhưng anh chẳng tài nào hiểu được khi chưa một lần trực tiếp trò chuyện cùng cô. 
+    </p>
+    <p>Đến giờ phút này, những gì sót lại với anh chỉ là những giọt tung tóe của ly cocktail rơi chầm chậm xuống sàn. Hoặc cũng chẳng phải. Đó có thể là những giọt mưa rơi nhè nhẹ từ mảng không gian anh chừa lại trên mái nhà. Giờ đây, anh ngồi tại góc bàn đôi hôm nào, trên tay cầm ly trà với vị bạc hà Julep ngây ngất. Anh lắng tai nghe tiếng ngựa rềnh rang chạy qua cửa tiệm như một nghi lễ cuối năm để hồi tưởng về những ngày quá khứ tươi đẹp. Mái đầu anh đã bạc óng những cọng tóc phai theo thời gian. Nhưng tôi chẳng biết được tình cảm đậm sâu trong anh như thế nào. Tôi chỉ biết anh vẫn còn nhìn về phía đối diện cửa tiệm nhiều lần qua mảng kính trong suốt của “cửa tiệm lốc xoáy vỡ tung mái nhà.” Mới hôm kia thôi, anh đã sang ven đường ngắt lấy nhánh bạc hà còn sót lại. Chẳng còn ngào ngạt vị sô cô la đắng ngọt, chẳng còn hình bóng người thiếu nữ anh mê đắm. 
+    </p>
+    <p>Chỉ còn lại anh và những mơ màng về thánh Julep mà nhiều ngày anh vẫn trông về.</p>
+
+    </section>
+
+    <div id="other-stories-container">
+      <h2>Những câu chuyện mùi hương khác</h2>
+      <ul id="other-stories-list">
+          <li><a href="/stories_vn/Cape_Heartache.html">Mũi Đất Đau Lòng</a></li>
+          <li><a href="/stories_vn/Fox_Flowerbed.html">Sương Mù Ngày Cũ có Con Cáo trên Giường Hoa</a></li>
+          <li><a href="/stories_vn/Love_Everything.html">Trong Tình Yêu với Mọi Thứ</a></li>
+          <li><a href="/stories_vn/Memoirs_Trespasser.html">Hồi ức Kẻ Xâm Phạm</a></li>
+          <li><a href="/stories_vn/Slow_Explosions.html">Cú nổ chậm</a></li>
+          <li><a href="/stories_vn/Waffle_Cone.html">Thoảng Vị Ốc Quế</a></li>
+      </ul>
+  </div>
+
+  </article>
+
+
+</body>
+</html>

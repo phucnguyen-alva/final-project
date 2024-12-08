@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saint Julep</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+  <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="stories">
+  
+  <div class="button-container-stories">
+    <a href="../index.html" class="button-stories">Return to Homepage</a>
+    <a href="../stories_vn/Saint_Julep.html" class="button-stories">View in Vietnamese</a>
+  </div>  
+
+  <article>
+    <header>
+      <h1 class="stories">Saint Julep</h1>
+      <p class="subtitle"> The years had silvered his hair, but his gaze remained fixed across the street. 
+    </p>
+    </header>
+
+    <canvas id="riveCanvas"></canvas>
+    <script>
+      // Initialize the Rive animation
+      const canvas = document.getElementById("riveCanvas");
+    
+      const riveInstance = new rive.Rive({
+        src: "../animation/fox_flowerbed.riv", // Path to the Rive file
+        canvas: canvas,
+        autoplay: true,
+        artboard: "fox 2", // Specify the artboard
+        stateMachines: ["State Machine 1"], // State machine in the Rive file
+        fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Adjust canvas size on load
+        },
+      });
+    
+      // Adjust the canvas size to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    
+      // Listen for window resize events to dynamically adjust the canvas
+      window.addEventListener("resize", resizeCanvas);
+    </script>
+
+    <section>
+      <h2>The summer was quiet.</h2>
+      <p> Sunlight filtered through the window, murmuring softly. Smoke curled from his coffee cup as it rose to his lips. The rich bitterness collided with the floating motes of dust caught in the sunbeams. He looked toward the café across the street. The grass along their sidewalk always seemed greener. They accented it with bright rose bushes basking in the sunlight—a clichéd scene, yet one that struck certain chords of longing in his heart.
+
+    </p>
+
+      <p>The coffee swirled in his cup, but his eyes never followed the motion. Still, the coffee seemed to gaze back at him, reflecting his faintly furrowed brows. The sky was never truly this shade of dark brown, yet sometimes, it took on this hue when his thoughts circled endlessly. Spirals like these always came when people waited behind their own windows, hoping for rainbows. And there it was—a rainbow, gleaming faintly through the mist of a sprinkler watering the bright green grass across the street.
+
+    </p>
+
+      <p>“You can’t sit here all day,” the boss said gruffly, refilling his cup. “The customers won’t wait.”
+
+    </p>
+
+      <p>But he didn’t move. His eyes remained fixed on the rhythmic arcs of water.
+
+    </p>
+
+      <p>The café hummed with life beneath an open sky—no roof, no lights, no enclosure for thought. The air was filled with voices and the subtle music that mingled with the aroma wafting from the kitchen.
+
+
+    </p>
+
+      <p>"The Roofless Whirlwind Café," it was called—a name born of an accident weeks prior when a storm had torn the roof off. Not the first, nor the most unique name, but it was enough to capture the reality they served.
+
+    </p>
+    <p>“Watching Julep again?” the boss teased as he poured another cup.
+    </p>
+    <p>He didn’t reply, though his gaze shifted from the wild green grass to the window of the shop across the street. There, a young woman with a sprig of mint pinned in her hair arranged dark, glossy chocolate bars in neat rows. Her movements were smooth, fluid, like cacao pressed and churned into velvet. The name Julep stirred something inside him, like the plummet of a rollercoaster’s first drop.
+    </p>
+    <p>“Fifteen minutes until we open. Finish your coffee and get ready,” the boss said, leaving him with the cup and an apron.
+    </p>
+    <p>He nodded absently, though his thoughts were elsewhere, stretching past the walls to follow Julep’s slender hands as they danced over the chocolates. His coffee swirled to its end, and he returned to the roofless café, now a local curiosity after the storm. No rain had come since, giving them an excuse to keep the unique experience alive. Breakfast thrived on sunny mornings and mild summer nights, under skies unbound by beams or shingles. It was freedom, the boss said—an open space for thoughts to drift unencumbered into the vast, cloud-dotted heavens.
+
+
+    </p>
+
+      <p>Customers trickled in as the day wore on. A young man in a suit crossed the street to Julep’s shop. He visited her daily, always immaculately dressed, always greeted with her brightest smile. She handed him his usual hot cacao, a gesture so practiced it seemed like a morning kiss between spouses. Did they meet again in the evening, sharing soft murmurs under moonlight? He didn’t know.
+
+    </p>
+
+      <p>“If you’re not careful, you’ll burn yourself standing there,” an old woman snapped, pulling him back to reality. He adjusted the coffee pot just in time to prevent it from spilling. Just one more drop, he thought, and Julep would no longer be the vibrant green grass across the street.
+
+    </p>
+
+      <p>The day unraveled in a steady rhythm. Orders came and went, his hands moving in practiced loops. But an unusual sight broke his cycle: Julep was walking toward the café, her hand clasped with the man in the suit. For a moment, his face lit with a fleeting smile, but it faltered as he noticed how closely she leaned into her companion.
+
+    </p>
+    <p>“Two glasses of white wine, please,” she said with a warm smile, looking up at him as if they were strangers—which they were.
+    </p>
+    <p>“I’m sorry, we’re out of wine. We only have juice and iced tea,” he lied, unwilling to let them share the intoxication of the evening.
+    </p>
+    <p> She hesitated, glancing at the man, who remained indifferent. “Juice, then,” she said softly.
+    </p>
+    <p>The rain came suddenly, pelting the roofless café. Julep and her companion fled, leaving their meal untouched. The next morning, he worked in the early hours, hammering together a small roof over their table. By the end of the week, he’d covered several more tables. The following week, half the café was shielded. But Julep didn’t return.
+    </p>
+    <p>Her chocolate shop had gone dark. Without her, his days grew hollow, his smile rare. But every so often, the faint scent of mint filled the air, stirring memories. One evening, as he looked up, she stood before him, radiant as ever. Her companion was with her, but she seemed different—tired, perhaps.
+    </p>
+    <p>“I’ll have the usual,” she said, her voice soft, distant.
+    </p>
+    <p>As he prepared her order, he glanced back. The man in the suit knelt, presenting her with a ring—a circle of eternity. The scene was silent, save for the faint clatter of his cocktail shaker.
+    </p>
+    <p>Later that night, under the open sky, he sat alone at the very table he’d built for her. In his hands, a glass of mint tea. The horses’ hooves clattered faintly on the street, a ritualistic rhythm that carried him back to sweeter days. The years had silvered his hair, but his gaze remained fixed across the street. The chocolate shop was long gone, yet he still saw her there, a ghost of his imagination.</p>
+    <p>In his heart, she would always be Saint Julep, the mint-scented muse who had lingered, briefly, in his life.
+    </p>
+
+    </section>
+
+    <div id="other-stories-container">
+      <h2>Other Stories You Might Enjoy</h2>
+      <ul id="other-stories-list">
+          <li><a href="/stories/Cape_Heartache.html">Cape Heartache</a></li>
+          <li><a href="/stories/Fox_Flowerbed.html">Fox in the Flowerbed</a></li>
+          <li><a href="/stories/Love_Everything.html">In Love with Everything</a></li>
+          <li><a href="/stories/Memoirs_Trespasser.html">Memoirs of a Trespasser</a></li>
+          <li><a href="/stories/Slow_Explosions.html">Slow Explosions</a></li>
+          <li><a href="/stories/Waffle_Cone.html">A Whiff of Waffle Cone</a></li>
+      </ul>
+  </div>
+
+  </article>
+
+
+</body>
+</html>

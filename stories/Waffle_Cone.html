@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Whiff of Waffle Cone</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+  <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="stories">
+  
+  <div class="button-container-stories">
+    <a href="../index.html" class="button-stories">Return to Homepage</a>
+    <a href="../stories_vn/Waffle_Cone.html" class="button-stories">View in Vietnamese</a>
+  </div>  
+
+  <article>
+    <header>
+      <h1 class="stories">A Whiff of Waffle Cone</h1>
+      <p class="subtitle"> I call this flavor a mirror. The flavor that sparks conversations from the menu’s list of thirty options.
+    </p>
+    </header>
+
+    <canvas id="riveCanvas"></canvas>
+    <script>
+      // Initialize the Rive animation
+      const canvas = document.getElementById("riveCanvas");
+    
+      const riveInstance = new rive.Rive({
+        src: "../animation/fox_flowerbed.riv", // Path to the Rive file
+        canvas: canvas,
+        autoplay: true,
+        artboard: "fox 2", // Specify the artboard
+        stateMachines: ["State Machine 1"], // State machine in the Rive file
+        fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Adjust canvas size on load
+        },
+      });
+    
+      // Adjust the canvas size to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    
+      // Listen for window resize events to dynamically adjust the canvas
+      window.addEventListener("resize", resizeCanvas);
+    </script>
+
+    <section>
+      <h2>Children love waffle cones.</h2>
+      <p> The crunch that shatters in their mouths brings joy that lingers all day. The subtle sweetness of the cone soothes the sugary intensity of the ice cream it cradles. Yet children have no say in the matter of finances. They don’t concern themselves with the rapid melting of the cream, the sticky mess, or the chemicals concocted to create the treat. All they know is the happiness of savoring an icy delight on a sweltering summer day. The strawberry tang of fertile, cold lands. The pure vanilla taste that stitches memories together like butter-colored dreams. The bittersweet chocolate that stirs tiny contemplations about the universe—thoughts they may have unconsciously harbored since the age of three. Ice cream flavors are like territories of wonder, each a place to decode. But their parents rarely ponder such things. Parents prioritize convenience, opting for paper cups and plastic spoons over the cumbersome, organic indulgence of a waffle cone.
+    </p>
+
+      <p>The park opens, and families stream in waves. They all pass by the inviting ice cream stand. But it’s still early, and the children’s parents aren’t ready to approve a morning sugar rush. Eyes glance briefly at the menu, expressions shifting at the sight of one particular flavor. Whispers buzz between couples and siblings. The unique, hand-crafted options on the menu captivate them, drawing out the wonder of a childlike gaze, while the children themselves are already lost in visions of their lips meeting that perfect, round scoop.
+    </p>
+
+      <p>I call this flavor a mirror. The flavor that sparks conversations from the menu’s list of thirty options. Something lingers in their subconscious, pulling words to the surface. The entire day—the thrill rides, bumper cars, ice slides—will be colored by that flavor. Because they’ve lived with it all their lives, knowingly or not.
+    </p>
+
+      <p>“Can I have an empty waffle cone?” A bright voice breaks my thoughts. Startled, I focus back on the present. How strange. Someone asking for just a cone at this hour? Peering over the counter, I see no one.
+    </p>
+
+      <p>“Down here!” The voice rings out again. Leaning down, I spot a child beaming up at me, alone at the counter. I glance around, searching for a parent watching from a distance, but no one claims the boy.
+
+    </p>
+
+      <p>“What flavor would you like? We have—”
+    </p>
+    <p>“I just want the cone!”</p>
+    <p>“But the cone isn’t cold, and it doesn’t have ice cream…”</p>
+    <p> “I don’t like ice cream.”</p>
+    <p>The child’s sparkling eyes hold my gaze. My first thought is that he doesn’t have enough money for ice cream. But his neat appearance—a tucked-in shirt and overalls—suggests he comes from a well-off family. His rosy cheeks and plump face give the impression he’s already sampled every flavor life offers.
+
+    </p>
+
+      <p>“I’ve eaten all the ice cream in the world,” he says, as if reading my mind. “I only want the cone.”
+    </p>
+
+      <p>“Really? But I’ve never seen you here before.”
+    </p>
+
+      <p>“Just sell me the cone, please. I really want the little bump of cream at the bottom.”
+    </p>
+    <p>Suddenly, I understand. This child treasures the simple joy of the final bite, the tiny cream-filled nub at the cone’s base. It’s unusual—no one’s asked for this before. I’d assumed waffle cones had become an inconvenience, outshone by the efficiency of cups. But I comply, handing over a cone. The boy insists on leaving some coins before darting off into the park, a wide grin plastered across his face. Alone, he melts into the crowd.</p>
+    <p>“One cone.”</p>
+    <p> “And one ice cream.”</p>
+    <p>Two new voices claim my attention. A young couple stands at the counter, their eyes scanning the menu. They don’t hesitate with their order, but their request puzzles me. Why separate the cone from the ice cream? Handing the cone to one, I fumble with the ice cream. Should I place it directly in his hands or use a cup?</p>
+    <p>“Just put it in my hands,” he says, noticing my hesitation.</p>
+    <p>I scoop the ice cream into his palm, where it begins to melt immediately. After paying, they leave, cheerful and unbothered by the mess. I wonder how they’ll enjoy their treat—perhaps trading bites to savor each element uniquely. Strangely, the next few customers mimic their order, asking for cones and ice cream separately. They claim the air carries the faint allure of waffle cones, tempting them to try this unorthodox way of eating. By day’s end, the cones are nearly gone, and I feel a quiet pride watching their popularity rise.</p>
+    <p>As I prepare to close, one last customer approaches. A man with a digital camera slung over his shoulder. A name tag pinned to his chest reads Dẻ – Photographer. Exhausted, I muster a smile. He has a sharp, angular face, thick brows, and slightly flushed lips—a presence that exudes warmth and invites trust.</p>
+    <p>He shows me photos he’s taken of me throughout the day. His commentary on composition and lighting makes me feel special. Then, he asks, “Should I get a cone or ice cream?”</p>
+    <p>“You can have both,” I reply. “There’s no rule against it.”</p>
+    <p>His question echoes the peculiar orders I’d heard all day. A collective craving, unresolved. Dẻ says he wants to bring something his sibling would truly enjoy but doesn’t want to assume their taste. I suggest he ask them—nothing’s simpler than understanding someone by listening to their answer. His eyes drop to the ice cream case, a shadow of emotion crossing his face. A line of customers grows behind him, but I let him take his time.</p>
+    <p>After some thought, I share the story of the boy from earlier, the one who wanted only the cone. Perhaps Dẻ’s sibling would find joy in that simplicity. He smiles faintly, nodding. “A cone, then,” he decides, and I carefully prepare it for him.</p>
+
+    <p>As he leaves, Dẻ pins photos of waffle cones to the counter. Other customers, curious, begin to linger over the images. Soon, they ask to try the cones on their own, ignoring the dazzling ice cream flavors.</p>
+    <p>For the first time, the humble waffle cone becomes the star, its subtlety surpassing the sweetness that once overshadowed it.</p>
+
+    </section>
+
+    <div id="other-stories-container">
+      <h2>Other Stories You Might Enjoy</h2>
+      <ul id="other-stories-list">
+        <li><a href="/stories/Cape_Heartache.html">Cape Heartache</a></li>
+        <li><a href="/stories/Fox_Flowerbed.html">Fox in the Flowerbed</a></li>
+        <li><a href="/stories/Love_Everything.html">In Love with Everything</a></li>
+        <li><a href="/stories/Memoirs_Trespasser.html">Memoirs of a Trespasser</a></li>
+        <li><a href="/stories/Slow_Explosions.html">Slow Explosions</a></li>
+        <li><a href="/stories/Saint_Julep.html">Saint Julep</a></li>
+      </ul>
+  </div>
+
+  </article>
+
+
+</body>
+</html>

@@ -6,51 +6,20 @@
   <title>Fox in the Flowerbed</title>
   <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
   <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
-  <style>
-
-    body, main {
-      background-color: #000000; /* Black background */
-      color: #ffffff; /* White text for better readability */
-    }
-
-    .button-container {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      color: white;
-      border: none;
-      text-align: center;
-      cursor: pointer;
-    }
-    .button:hover {
-      border-radius: 20px;
-    }
-    canvas {
-      display: block;
-      width: 50vw; /* Full viewport width */
-      height: 50vh; /* Full viewport height */
-    }
-  </style>
-
+  <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
-          <!-- Buttons for navigation -->
-  <div class="button-container">
-    <!-- Link to homepage -->
-    <a href="../index.html" class="button">Return to Homepage</a>
 
-    <!-- Link to Vietnamese version -->
-    <a href="../stories_vn/Fox_Flowerbed.html" class="button">View in Vietnamese</a>
-  </div>    
+<body class="stories">
+  
+  <div class="button-container-stories">
+    <a href="../index.html" class="button-stories">Return to Homepage</a>
+    <a href="../stories_vn/Fox_Flowerbed.html" class="button-stories">View in Vietnamese</a>
+  </div>  
+
   <article>
     <header>
-      <h1>Yesterday Haze with a Fox in the Flowerbed</h1>
-      <p class="subtitle">Traipsing through a mountain meadow, visions of sheer summer dresses spinning in the breeze, the buzz of the first weeks of Spring</p>
+      <h1 class="stories">Yesterday Haze with a Fox in the Flowerbed</h1>
+      <p class="subtitle">It wasn’t the only wooden puppet in life, but it was the only one we both saw together.</p>
     </header>
 
     <canvas id="riveCanvas"></canvas>
@@ -59,10 +28,10 @@
       const canvas = document.getElementById("riveCanvas");
     
       const riveInstance = new rive.Rive({
-        src: "../animation/fox_walk_cycle.riv", // Path to the Rive file
+        src: "../animation/stories_animation.riv", // Path to the Rive file
         canvas: canvas,
         autoplay: true,
-        artboard: "fox 2", // Specify the artboard
+        artboard: "flower fox", // Specify the artboard
         stateMachines: ["State Machine 1"], // State machine in the Rive file
         fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
         alignment: rive.Alignment.CENTER, // Center the animation
@@ -84,8 +53,8 @@
     </script>
 
     <section>
-      <h2>It wasn’t the only wooden puppet in life, but it was the only one we both saw together.</h2>
-      <p>The sound of the mist was piercing. In the front row, every sound from the audience behind and the stage ahead merged into a white noise. I glanced at Di sitting beside me, my fingers brushing the edge of his chair. A fleeting glance exchanged with the darkness before the stage lights returned. Colors slowly emerged, brought to life by the heat of photons. Warm hues danced on the water puppets and traditional flags, punctuating the symphony of the theater. The movements on stage drew my eyes back to its focal point.</p>
+      <h2>The sound of the mist was piercing.</h2>
+      <p>In the front row, every sound from the audience behind and the stage ahead merged into a white noise. I glanced at Di sitting beside me, my fingers brushing the edge of his chair. A fleeting glance exchanged with the darkness before the stage lights returned. Colors slowly emerged, brought to life by the heat of photons. Warm hues danced on the water puppets and traditional flags, punctuating the symphony of the theater. The movements on stage drew my eyes back to its focal point.</p>
 
       <p>Di said nothing, but his pinky tapped lightly on the armrest in rhythm with the beat of the drum. Mist hovered above the water, creating an ethereal effect for the appearance of objects imbued with soul. The water puppets emerged from the crimson curtain’s mystery. They moved in response to the beckoning music, played by artisans flanking the stage. Even the folds of the curtain rippled faintly, mirroring the water’s surface, stirred by the gentle sigh of sound. Di stole a furtive glance at me amidst the interplay of tones, but neither of us spoke. The mist gradually dispersed, and the puppet play began.</p>
 
@@ -114,6 +83,19 @@
 
       <p>Di was a puppet, a fox, and the world around him, his floral bed.</p>
     </section>
+
+    <div id="other-stories-container">
+      <h2>Other Stories You Might Enjoy</h2>
+      <ul id="other-stories-list">
+        <li><a href="/stories/Cape_Heartache.html">Cape Heartache</a></li>
+        <li><a href="/stories/Saint_Julep.html">Saint Julep</a></li>
+        <li><a href="/stories/Love_Everything.html">In Love with Everything</a></li>
+        <li><a href="/stories/Memoirs_Trespasser.html">Memoirs of a Trespasser</a></li>
+        <li><a href="/stories/Slow_Explosions.html">Slow Explosions</a></li>
+        <li><a href="/stories/Waffle_Cone.html">A Whiff of Waffle Cone</a></li>
+      </ul>
+  </div>
+
   </article>
 
 

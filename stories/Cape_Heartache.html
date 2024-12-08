@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cape Heartache</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+  <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="stories">
+  
+  <div class="button-container-stories">
+    <a href="../index.html" class="button-stories">Return to Homepage</a>
+    <a href="../stories_vn/Cape_Heartache.html" class="button-stories">View in Vietnamese</a>
+  </div>  
+
+  <article>
+    <header>
+      <h1 class="stories">Cape Heartache</h1>
+      <p class="subtitle">Death scattered like shards of a broken heart, destined to become new clay.
+    </p>
+    </header>
+
+    <canvas id="riveCanvas"></canvas>
+    <script>
+      // Initialize the Rive animation
+      const canvas = document.getElementById("riveCanvas");
+    
+      const riveInstance = new rive.Rive({
+        src: "../animation/stories_animation.riv", // Path to the Rive file
+        canvas: canvas,
+        autoplay: true,
+        artboard: "cape", // Specify the artboard
+        stateMachines: ["State Machine 1"], // State machine in the Rive file
+        fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Adjust canvas size on load
+        },
+      });
+    
+      // Adjust the canvas size to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    
+      // Listen for window resize events to dynamically adjust the canvas
+      window.addEventListener("resize", resizeCanvas);
+    </script>
+
+    <section>
+      <h2>Đon’s hands moved steadily over the spinning wheel.</h2>
+      <p> Droplets of water scattered on the muted brown surface below. He leaned in, eyes fixed, guiding his fingers along the soft, malleable clay. With deliberate strokes, he shaped the mound higher, while his other hand spun the wheel counterclockwise. Right-handed people, he believed, should never move with the flow of time. He once thought the left brain bound people to a linear course, while the right rewound it. But his theory faltered against the teachings of his pottery master.
+    </p>
+
+      <p>In minutes, he formed a full-bodied flower vase atop the wheel. Not a drop of water out of place. Gently, he lifted the vase to the side table, joining rows of bowls, plates, teapots, and countless other clay creations scattered across the workshop. Upstairs, the sound of wood striking echoed, mingling with the hollow resonance of ceramic jars. His master descended the worn, dark brown stairs, holding a lit blowtorch. Flames flickered as he moved among the clay vessels lining the passage toward Đon. The hiss of the torch filled the otherwise silent room. The master wandered around the kiln, eyes following the sulfurous red-blue dance of the flames.
+    </p>
+
+      <p>“Đon, how long do you think it’ll take to dry?” the master asked as his robe brushed against the dust-laden pottery. His hand rested on a large cloth, draped over an unseen object dominating one corner of the room.
+    </p>
+
+      <p>Đon pressed his thumb into the lip of the vase on the wheel, shaping a small heart. He paused, staring at the swirling, murky water in the nearby pail—water his hands had dipped into countless times. He shook his head without answering. The master moved on, extinguishing the blowtorch and crossing the last item off a list of pieces to fire.
+    </p>
+
+      <p>Đon placed the heart-shaped vase among the drying creations. Then, in a sudden motion, he pushed them over like a row of dominoes. Each piece—fragile or firm—fell to the coarse floor in a symphony of destruction. The master said nothing, still facing the list on the board. The cascade of breaking ceramics seemed preordained, the arrangement deliberate from the start. Even the torch’s hiss had been a rhythm buried deep in Đon’s spirit. How deep?
+    </p>
+
+      <p>Deep enough to resurface on the day Đon hurled the spinning wheel across the ceramics museum. On that day, rage consumed him—at his useless fingers, which flattened clay into mud instead of forming it into shapes. His fingers felt like the embodiment of his own inadequacy, and vice versa. The screams that erupted reverberated so violently they couldn’t recognize themselves. All Đon’s hands could do was throw the wheel, shattering porcelain in a cacophony of sharp tones. White shards spread across the ground like jagged foundations. Drops of red seeped into the broken clay, softening it back to its primal state.
+    </p>
+
+      <p>The master, steady as ever, held the blowtorch despite trembling hands. He stared at the destruction with a calm so absolute it began to crack when the spinning wheel struck the museum’s largest ceramic heart. The heart shattered, and with it, the master collapsed—seized by a heart attack that snuffed out his life in an instant. As simple as a blink. Life flowed quietly in the wake of the breaking sound. Death scattered like shards of a broken heart, destined to become new clay.
+    </p>
+
+      <p>Đon’s hands grew rough as the hardened clay turned brittle. The ruined pieces lay silent, their melodies faded. Only the shrouded object remained. Đon removed his clay-stained apron and strode through the debris, each step crunching against the remnants beneath him. He tore the list of items to craft, revealing another identical list beneath it, resting beside a photo of his master.
+    </p>
+
+      <p>Taking a few steps forward, Đon yanked the cloth off the hidden object. A massive clay heart dominated the space. Cracks spread across its surface as if in response to his forceful pull. The sound of fissures echoed faintly, mirroring his memories of his own hands.
+    </p>
+
+      <p>He pressed his palm against the giant heart. It softened, collapsing into mud. Đon stepped into the heart slowly, sinking into the clay. In his other hand, he held the blowtorch. Reaching the center, the torch hissed again, filling the room with the murmur of white noise. Gentle. Dreamlike. Detached.
+    </p>
+
+      <p>Đon let himself dissolve into the heartbroken clay.</p>
+
+    </section>
+
+    <div id="other-stories-container">
+      <h2>Other Stories You Might Enjoy</h2>
+      <ul id="other-stories-list">
+        <li><a href="/stories/Saint_Julep.html">Saint Julep</a></li>
+        <li><a href="/stories/Fox_Flowerbed.html">Fox in the Flowerbed</a></li>
+        <li><a href="/stories/Love_Everything.html">In Love with Everything</a></li>
+        <li><a href="/stories/Memoirs_Trespasser.html">Memoirs of a Trespasser</a></li>
+        <li><a href="/stories/Slow_Explosions.html">Slow Explosions</a></li>
+        <li><a href="/stories/Waffle_Cone.html">A Whiff of Waffle Cone</a></li>
+      </ul>
+  </div>
+
+  </article>
+
+
+</body>
+</html>

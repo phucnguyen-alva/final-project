@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thoảng vị ốc quế
+</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+  <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="stories">
+  
+  <div class="button-container-stories">
+    <a href="../index.html" class="button-stories">Trở về Trang Chủ</a>
+    <a href="../stories/Waffle_Cone.html" class="button-stories">Đọc bằng tiếng Anh</a>
+  </div>  
+
+  <article>
+    <header>
+      <h1 class="stories">Thoảng vị ốc quế</h1>
+      <p class="subtitle"> Nhưng tôi luôn gọi cái vị ấy là một tấm gương. Cái vị mà con người ríu rít bàn luận với nhau từ thực đơn.
+    </p>
+    </header>
+
+    <canvas id="riveCanvas"></canvas>
+    <script>
+      // Initialize the Rive animation
+      const canvas = document.getElementById("riveCanvas");
+    
+      const riveInstance = new rive.Rive({
+        src: "../animation/fox_flowerbed.riv", // Path to the Rive file
+        canvas: canvas,
+        autoplay: true,
+        artboard: "fox 2", // Specify the artboard
+        stateMachines: ["State Machine 1"], // State machine in the Rive file
+        fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Adjust canvas size on load
+        },
+      });
+    
+      // Adjust the canvas size to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    
+      // Listen for window resize events to dynamically adjust the canvas
+      window.addEventListener("resize", resizeCanvas);
+    </script>
+
+    <section>
+      <h2>Lũ trẻ rất thích ăn ốc quế.</h2>
+      <p> Tiếng răng rắc tan vỡ trong miệng làm chúng vui vẻ cả ngày. Và cả vị ngọt thanh của ốc quế điềm tĩnh lại cái ngọt gây gắt của kem đường. Nhưng lũ trẻ không có tài chính để quyết định tất cả. Chúng không phải lo nghĩ về độ tan chảy thật nhanh của kem ngọt, của những vấy bẩn mà một cây ốc quế nhũn nhặn mang lại, hay những hóa chất người ta hòa hợp để tạo nên một cây kem. Lũ trẻ chỉ biết tận hưởng cảm giác hạnh phúc khi thưởng thức một cây kem mát lạnh giữa trời hạ oi nồng. Vị dâu thích thú của một vùng đất lạnh thổ dưỡng tốt. Vị vani nguyên bản kết dính lại những ký ức trắng bơ đẹp đẽ và thân thuộc. Vị sô cô la đăng đắng đánh thức những suy tư nhỏ nhoi của một đứa trẻ, những suy tư về vũ trụ ngày cũ khi trong vô thức vào những năm ba tuổi chúng đã nghĩ về. Ti tỉ những vị kem khác là những vùng đất không dễ dàng đoán định. Thưởng thức kem cũng là một công việc diễn dịch, nhưng thường bố mẹ của lũ trẻ chẳng đoái hoài mấy đến những điều như thế. Họ là người quyết định và hộp giấy hay nhựa thường sẽ là lựa chọn tiện lợi thay thế cho cây ốc quế hữu cơ phiền phức.
+
+    </p>
+
+      <p>Đã đến lúc mở cửa, toàn bộ công viên ồ ạt những gia đình rải bước tiến vào. Tất cả đều phải lướt ngang qua sạp hàng kem mời gọi này. Chỉ có điều trời phải còn sớm, cuốn họng của những đứa trẻ hẳn vẫn chưa được cho phép để đón nhận những cơn mát lạnh ngọt ngào này. Bọn họ chỉ ngước mắt nhìn qua thực đơn thật nhanh chóng. Dĩ nhiên, tất cả đều bất ngờ trước một hương vị và xì xầm nói cùng nhau điều gì đó, thường sẽ là những cặp vợ chồng hay anh chị em trong gia đình. Toàn bộ những vị kem có trên thực đơn này đều là độc bản khiến họ trầm trồ lại như một đứa trẻ trong khi những đứa trẻ thì có vẻ đã chìm đắm vào mơ tưởng đến giờ khắc môi mình được chạm vào cục kem tròn xoay. Nhưng tôi luôn gọi cái vị ấy là một tấm gương. Cái vị mà con người ríu rít bàn luận với nhau từ thực đơn. Những gì bắt lấy ánh mắt của họ đều không giống nhau từ cái thực đơn gần ba mươi vị ấy. Chắc là đã có gì đọng lại trong tiềm thức buộc họ phải nói ra thành lời. Và rồi cả chuyến đi chơi này, dù trên những cao tốc tàu, xe điện đụng, nhà băng, hay bất cứ một trò giải trí cảm giác mạnh nào, họ cũng chỉ nhìn một ngày của mình như cái hương vị ấy. Cốt bởi họ đã sống cùng nó cả một đời. 
+
+    </p>
+
+      <p>“Cho em cây ốc quế rỗng!” - một tiếng nói vang lên ngay trước mắt đánh động lại sự chú ý của tôi về với thực tại. Lạ thật. Giờ này lại có người mua một ốc quế rỗng. Điều kì lạ là khi tôi nhìn trước quầy cũng chẳng thấy ai. 
+
+    </p>
+
+      <p>“Em ở dưới này!” - Tiếng nói thảnh thót vọng từ phía dưới quầy. Tôi rướn mình nhìn xuống thì thấy một đứa trẻ cười tít mắt. Chẳng có ai đi cùng em đến quầy kem. Tôi cũng đưa mắt nhìn xung quanh đoán xem bố mẹ đứa bé trai này đang đứng đâu nhìn cậu tự lập đến mua kem. Nhưng tôi bỏ cuộc nhanh chóng. 
+
+    </p>
+
+
+      <p>“Em muốn ăn vị gì? Ở đây có những vị như là…”
+
+    </p>
+    <p>“Em chỉ muốn cây ốc quế không!” 
+    </p>
+    <p>“Nhưng mà ốc quế thì không lạnh và không có kem đâu đó…”
+    </p>
+    <p> “Em không thích kem.”
+    </p>
+    <p>Tôi nhìn vào đôi mắt long lanh rạng rỡ của em. Suy đoán trong đầu tôi là đứa trẻ này không có đủ tiền cho một vị kem. Thế nhưng nhìn em trong có vẻ được sinh ra trong một gia đình có điều kiện khi quần áo tươm tất với chiếc áo thun sơ vin trong quần yếm. Đôi gò má của em hồng hào và phúng phính tạo nên một cảm giác em đã thưởng thức tất cả vị kem trên cuộc đời này. 
+
+
+    </p>
+
+      <p>“Em ăn hết tất cả vị kem trên cuộc đời này rồi. Em chỉ muốn ăn ốc quế.” - đứa trẻ nói với tôi khi thấy tôi cứ đau đáu nhìn vào gương mặt em. 
+
+    </p>
+
+      <p>“Vậy hả? Nhưng đây là lần đầu chị thấy em đến đây.”
+
+    </p>
+
+      <p>“Chị bán cho em một cây ốc quế được không? Em thèm cái đũn kem nho nhỏ ở dưới cùng của nó quá.”
+
+    </p>
+    <p>Giờ thì tôi hiểu được ít nhiều lý do đứa trẻ này chỉ muốn ăn một cây ốc quế. Nhưng thật lạ lùng. Trước giờ chẳng ai yêu cầu điều đó cả. Tôi cũng đã cứ nghĩ ốc quế dần trở thành một thứ phiền toái mà người ta chỉ muốn thưởng thức kem trong hộp giấy cho tiện. Nhưng rồi tôi cũng lấy một cây ốc quế và tặng cho em. Đứa bé vẫn một mực để lại một ít tiền trên quầy trước khi rời đi. Em cười tít mắt và hớn hở chạy vào công viên giải trí. Tôi nhìn theo nhưng vẫn chẳng thấy ai đón em theo cùng. Đứa bé cứ thế hòa mình vào đám đông. 
+    </p>
+    <p>“Cho mình một ốc quế.”
+    </p>
+    <p> “Và một kem.”
+    </p>
+    <p>Đôi mắt tôi vẫn chưa rời khỏi đứa trẻ, nhưng đâu đó trước mặt đã có hai giọng nói khác tìm đến. Đó là một cặp nam đứng trước quầy nhìn chăm chăm vào thực đơn treo trên vách. Họ không chần chừ gọi món. Thế nhưng tôi vẫn không hiểu tại sao họ lại muốn tách hai thứ ra như vậy. Tôi đưa người đầu tiên cây ốc quế, nhưng loay hoay mãi với vị kem. Tôi không biết mình nên đặt kem lên đôi tay trần của cậu trai trẻ, hay bỏ chúng vào một hộp giấy như những khách hàng thông thường. 
+    </p>
+    <p>“Cứ đặt nó vào tay tôi.” - Cậu ta nhìn thấy được vẻ lúng túng của tôi đã cất tiếng đề xuất. 
+    </p>
+    <p>Tôi chỉ biết xới vị kem và đặt vào lòng bàn tay cậu. Kem đã bắt đầu tan chảy ngay từ lúc tiếp xúc với nhiệt độ âm ấm trong lòng bàn tay. Họ rời đi sau khi thanh toán cùng lời cảm ơn ríu rít. Tôi cũng chẳng mảy may suy nghĩ lắm đến việc họ thưởng thức món kem như thế nào sau khi rời đi. Có thể họ sẽ phải đổi chác cho nhau những gì mình có để tận hưởng được cái vị ngon độc bản của quán kem này. Nhưng điều kì lạ là những cặp đôi đến sau cũng đều đặt một đơn hàng tương tự như thế. Họ bảo đâu đó trong không trung thoang thoảng một vị ốc quế mời gọi. Nhưng đồng thời, họ cũng muốn được thưởng thức kem tách rời hoàn toàn. Tôi chẳng thể nói thêm điều gì, nhưng nhìn thấy ốc quế vơi dần trên cửa tủ thì cũng lấy làm mừng. 
+    </p>
+    <p>Chật vật mãi đến cuối ngày với hầu hết các đơn hàng đều yêu cầu tách ốc quế và kem trên đôi tay trần của họ, đã gần đến lúc tôi dọn dẹp cửa tiệm lưu động. Dù vậy, một khách hàng cuối cùng đã tới. Anh cầm trên tay chiếc máy ảnh kỹ thuật số. Trên ngực phải có cài một bảng hiệu “Dẻ - nhiếp ảnh gia.” Tôi ngước nhìn anh mỉm cười với nguồn năng lượng còn sót lại cuối ngày, Trông anh chững chạc với gương mặt góc cạnh, đôi mày dày rậm và đôi môi đo đỏ. Anh tạo cho người khác một cảm giác an toàn để tâm sự và thấu cảm dù chỉ là lần đầu gặp mặt. Dẻ mở máy ảnh cho tôi xem một số bức hình anh đã chụp tôi trong ngày. Cái cách anh nói về thần sắc và bố cục công việc của tôi khiến tôi cảm thấy mình thật đặc biệt. 
+    </p>
+    <p>Dẻ hỏi tôi nên chọn ốc quế hay kem. Tôi bảo anh vốn dĩ có thể chọn cả hai. Cửa tiệm không có quy định chỉ bán một trong hai cho khách hàng. Câu hỏi của anh như trùng lặp với những vị khách hàng trước. Dường như trong họ có một sự sôi sục tập thể nào đó chưa được giải thoát. Dẻ bảo anh muốn tặng cho em của mình một cây kem nó thực sự thích. Nhưng anh không biết đứa trẻ thích mùi vị nào. Anh không muốn quy chụp những gì nó thích với sự tiên đoán của bản thân. Tôi bảo Dẻ hỏi em. Không có cách nào dễ dàng hơn để hiểu người khác bằng việc hỏi và lắng nghe câu trả lời. Dẻ chỉ nhìn tôi và hạ tầm nhìn dần xuống tủ kem. Tôi thoáng thấy mắt Dẻ thấm đẫm một bầu tâm sự. Đồng thời, sau lưng cậu hàng người dài ra chờ đến lượt mình. Tôi vẫn để Dẻ suy nghĩ một hồi và không khiến cậu nao núng. Được một lúc Dẻ vẫn chưa đưa ra được quyết định, tôi liền bảo anh những đứa trẻ thường thích ăn ốc quế và phần kem đọng lại ở đáy. Tôi kể anh về đứa trẻ buổi sớm đã mua mỗi cây ốc quế mà không có kem và có thể em Dẻ cũng sẽ thích như thế. 
+    </p>
+    <p>Dẻ nhìn tôi. Môi anh hé nhần nụ cười trở lại cùng một cái gật đầu thật nhẹ. Anh bảo tôi gói giúp anh một cây ốc quế. Tôi cũng kỹ lưỡng làm điều đó. Trong lúc ấy, anh treo những bức ảnh in lên trên quầy hàng. Những bức ảnh ốc quế anh đã chụp từ khi nào không rõ. Khi nhận ốc quế, anh cảm ơn ríu rít và rời đi. Những vị khách từ sau tò mò nhìn vào những bức hình và cũng chỉ muốn thử vị ốc quế thoang thoảng. Lần đầu tiên họ phết lờ những vị kem bắt mắt.  
+    </p>
+
+    <p>Ốc quế trở thành nhân vật chính thay cho những biến chuyển ngọt ngào diễn ra trên đầu nó.</p>
+
+    </section>
+
+    <div id="other-stories-container">
+      <h2>Other Stories You Might Enjoy</h2>
+      <ul id="other-stories-list">
+        <li><a href="/stories_vn/Cape_Heartache.html">Mũi Đất Đau Lòng</a></li>
+        <li><a href="/stories_vn/Fox_Flowerbed.html">Sương Mù Ngày Cũ có Con Cáo trên Giường Hoa</a></li>
+        <li><a href="/stories_vn/Love_Everything.html">Trong Tình Yêu với Mọi Thứ</a></li>
+        <li><a href="/stories_vn/Memoirs_Trespasser.html">Hồi ức Kẻ Xâm Phạm</a></li>
+        <li><a href="/stories_vn/Slow_Explosions.html">Cú nổ chậm</a></li>
+        <li><a href="/stories_vn/Saint_Julep.html">Thánh Julep</a></li>
+      </ul>
+  </div>
+
+  </article>
+
+
+</body>
+</html>

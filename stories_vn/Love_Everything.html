@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fox in the Flowerbed</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+  <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="stories">
+  <div class="button-container-stories">
+    <a href="../index.html" class="button-stories">Trở về Trang Chủ</a>
+    <a href="../stories/Love_Everything.html" class="button-stories">Đọc bằng tiếng Anh</a>
+  </div>  
+
+  <article>
+    <header>
+      <h1 class="stories">Trong tình yêu với mọi thứ</h1>
+      <p class="subtitle">Có lẽ lửa là một chiếc cổng và khói là con đường duy nhất.</p>
+    </header>
+
+    <canvas id="riveCanvas"></canvas>
+    <script>
+      // Initialize the Rive animation
+      const canvas = document.getElementById("riveCanvas");
+    
+      const riveInstance = new rive.Rive({
+        src: "../animation/fox_flowerbed.riv", // Path to the Rive file
+        canvas: canvas,
+        autoplay: true,
+        artboard: "fox 2", // Specify the artboard
+        stateMachines: ["State Machine 1"], // State machine in the Rive file
+        fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Adjust canvas size on load
+        },
+      });
+    
+      // Adjust the canvas size to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    
+      // Listen for window resize events to dynamically adjust the canvas
+      window.addEventListener("resize", resizeCanvas);
+    </script>
+
+    <section>
+      <h2>Anh thắp khói cho mảnh vườn sau nhà.</h2>
+      <p>Khói bay là là qua những tán cây rộng lợp bóng. Em lần theo dấu tích của những ngọn cây trở về với cốt rễ của chúng. Ở đó chẳng có gì mấy ngoài mặt đất, cát bụi, và những viên sỏi. Nhưng em vẫn có cảm tình rất nhiều với chúng. Những thứ ấy thật tự nhiên và chân thành. Dùng những thanh gỗ đánh vào nhau, anh thắp ngọn lửa nuốt trọn những món đồ vặt vãnh trên mặt đất. Có cả những con sâu lượn mình xoắn quẩy bởi ngạt thở bầu không khí. Và những con nhện đánh mình trên không qua lớp lưới giăng chằn chịt kết những tán lá lại với nhau. Chúng lắng nghe thế giới này bằng đôi chân và cả cơ thể của mình. Những rung động làm nên một phần định nghĩa của loài nhện. Em hay mong mình được nhạy cảm với thế giới này như vậy. Cái nhạy cảm của xúc giác cảm nhận được ti tỉ mọi điều trên hành tinh này. Nhưng em có được gì, ngoài một bãi cháy của những kỷ niệm chính anh mang lửa đốt dần đi. 
+      </p>
+
+      <p>Em tưởng tượng về những lần anh thắp khói trước kia. Dù là điếu nhỏ trên đôi môi hồng hào hay những cơn cháy trên giường nệm, ngọn khói có khi thanh mảnh hay đôi lúc đậm đặc hơn những gì diễn tiến ở thực tại. Nó cuốn quanh khung cảnh và bao vây hết những sự sống đang hòa nhịp vào đời sống này. Em thấy khói giống như một cái ôm độc hại. Nó yêu lấy tất cả mọi thứ xung quanh mình, vì nó ghé tìm từng thứ một và để lại một mùi hương cháy xén đặc trưng. Nhiều người xem đó là một lời đe dọa, em nghĩ nó nhiều hơn như một loại nước hoa. Nó kết nối em với tro bụi là những thứ đã từng có ý nghĩa thật đậm sâu. Cũng hay anh nhỉ. Bước vào ngọn lửa kia thì mọi thứ tình yêu đều quy về thể tro bụi, hoặc cảm giác vô thường. Nhưng ngọn khói này cũng nhắc nhở em nhiều điều về nguồn cội của mình. Anh có nhớ những dịp lễ, bố mẹ mình đốt lấy những vật phẩm gửi về cho tổ tiên. Có lẽ lửa là một chiếc cổng và khói là con đường duy nhất. Lần theo khói, thế giới âm dương được thu hẹp và kết nối thật chặt chẽ với nhau. Khói là một con đường dẫn đến những vùng đất lạ, anh hiểu không? Sau này, nếu có dịp, em hy vọng anh sẽ giúp em trở thành một ngọn khói như thế sau cơn thiêu đốt trong biển lửa. 
+      </p>
+
+      <p>Em nhìn anh lúc này, mồ hôi nhễ nhại và đôi tay thô sần bởi những cuốc đất nhen nhúm mồi cho lửa. Nhịp cuốc anh vang đều theo tiếng lốp bốp của những tia lửa. Đôi mày anh nheo lại trước cái hừng hực của lửa và mùi cay nồng của khói. Em nhìn thấy bức ảnh của hai đứa bên trong làn khói tỏa vào mắt anh. Em chạm vào được một hình thể khác của những bình gốm đôi ta cùng nung ngày cũ. Em nếm được vị giòn rụm của ốc quế một buổi trưa hè hẹn hò. Em lắng tai nghe thấy lõm bõm tiếng nước của những con rối. Em ngửi được mùi của sữa và những nguyên liệu chứa trong tủ lạnh cả hai đã cùng lấy ra và làm thành những món ăn ngon. Và anh có nhớ cửa tiệm bên cạnh có những ngọn cỏ xanh rì hơn bên chúng ta. Nhưng có lẽ anh không nhìn chạm, nếm, lắng nghe, hay ngửi được bất cứ điều gì. Anh buông tay khỏi cây cuốc của mình và ngã trên giường đất. Trong một phút giây, em muốn giúp anh hòa vào ngọn khói nhân danh tình yêu với mọi thứ của chúng mình. 
+      </p>
+
+      <p>Anh từng hứa sẽ làm cho em một cái bình gốm thật đẹp và chắc. Cái bình ấy sẽ được tráng men và có thể đựng mọi thứ trên cuộc đời này. Nó sẽ đựng những cái nắm tay, những nụ hôn, và ánh mắt cả hai trao nhau mỗi ngày. Nhưng em trông mãi chẳng thấy chiếc bình ấy đâu. Có lẽ viền khói làm chiếc bình rạn nứt nhiều lần. Em không biết làm cách nào để chấp nối những mảnh rạn ấy. Anh bảo em nghĩ về nghệ thuật Kintsugi của Nhật Bản. Hai ta cùng nghĩ nhưng chưa bao giờ chạm tay thực hiện. Một dịp khác, em biết anh cũng đã lo lắng rất nhiều về chuyến bay em rời khỏi nửa địa cầu. Trên cao, những phân tử chuyển dịch liên hồi vồ vập nhau tạo thành những cơn ma sát rin rít bên cửa sổ. Anh có biết chiếc máy bay như cây kim ghim vào những làn mây bông gòn như suy nghĩ bị che chắn của em không. Một ngày không xa, em nghĩ những cơn bão trong tình yêu chúng ta có thể đánh bay mái nhà này. Làn khói ảo não trước mắt chỉ là một điềm báo thoang thoảng về những dư chấn có thể xảy đến trong tương lai. 
+      </p>
+
+      <p>Anh không nói một lời nào nhưng đôi mắt đã hướng về gương mặt em. Anh nhìn em như thể muốn nuốt trọn một phần bản ngã của quá khứ giống cách anh nuốt một cái bánh bao mà không nhai kỹ. Anh nghẹn ngào. Và những giọt lệ của anh rơi lã tã trên triền đồi cháy, trên cái đống ung hỗn tạp kỷ niệm của hai người. Nó dập cháy ngọn lửa hừng hực kia. Ngọn lửa tình của những ngày cũ. Khói được tỏa nghi ngút lần cuối cùng với cái mùi hăng khó ngửi. Chỉ sau vài giây ngắn ngủi, lửa tắt ngúm đi. Đôi mắt em đã rời khỏi anh.
+    </p>
+
+      <p>Trong tình yêu với mọi thứ, anh đã là ngoại lệ. 
+      </p>
+
+    </section>
+
+    <div id="other-stories-container">
+      <h2>Other Stories You Might Enjoy</h2>
+      <ul id="other-stories-list">
+        <li><a href="/stories_vn/Cape_Heartache.html">Mũi Đất Đau Lòng</a></li>
+        <li><a href="/stories_vn/Fox_Flowerbed.html">Sương Mù Ngày Cũ có Con Cáo trên Giường Hoa</a></li>
+        <li><a href="/stories_vn/Saint_Julep.html">Thánh Julep</a></li>
+        <li><a href="/stories_vn/Memoirs_Trespasser.html">Hồi ức Kẻ Xâm Phạm</a></li>
+        <li><a href="/stories_vn/Slow_Explosions.html">Cú nổ chậm</a></li>
+        <li><a href="/stories_vn/Waffle_Cone.html">Thoảng Vị Ốc Quế</a></li>
+      </ul>
+  </div>
+
+  </article>
+
+
+</body>
+</html>

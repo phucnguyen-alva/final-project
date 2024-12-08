@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In Love with Everything</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+  <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="stories">
+  
+  <div class="button-container-stories">
+    <a href="../index.html" class="button-stories">Return to Homepage</a>
+    <a href="../stories_vn/Love_Everything.html" class="button-stories">View in Vietnamese</a>
+  </div>  
+
+  <article>
+    <header>
+      <h1 class="stories">In Love with Everything</h1>
+      <p class="subtitle">Fire as a gateway, smoke as the only path.</p>
+    </header>
+
+    <canvas id="riveCanvas"></canvas>
+    <script>
+      // Initialize the Rive animation
+      const canvas = document.getElementById("riveCanvas");
+    
+      const riveInstance = new rive.Rive({
+        src: "../animation/fox_flowerbed.riv", // Path to the Rive file
+        canvas: canvas,
+        autoplay: true,
+        artboard: "fox 2", // Specify the artboard
+        stateMachines: ["State Machine 1"], // State machine in the Rive file
+        fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Adjust canvas size on load
+        },
+      });
+    
+      // Adjust the canvas size to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    
+      // Listen for window resize events to dynamically adjust the canvas
+      window.addEventListener("resize", resizeCanvas);
+    </script>
+
+    <section>
+      <h2>He lights smoke in the backyard.</h2>
+      <p>The haze drifts low, weaving through wide, shadowed leaves. I trace the trees upward, following their roots back to the soil. There’s nothing remarkable—just dirt, dust, and pebbles. But I feel deeply for them. They’re simple, honest things. With sticks in hand, he stirs a fire, swallowing the odd scraps scattered across the ground. Worms writhe, choking on the thick air. Spiders swing through the tangled webs that knit the canopy together. They sense the world through their legs, through their entire bodies. Vibration defines part of what it means to be a spider. I often wish I were that sensitive—to feel every flicker of existence on this planet. But what do I have? A charred field of memories he’s slowly burning away.
+    </p>
+
+      <p>I imagine the other times he lit smoke. A slender cigarette between his rosy lips. A blaze on the mattress. The smoke, sometimes thin, sometimes dense, wrapped itself around everything alive, pulling it into a toxic embrace. Smoke loves everything, doesn’t it? It finds each thing, one by one, leaving behind its scorched scent. Some see it as a threat. I think of it more as a kind of perfume. It connects me to ashes, to what once held profound meaning. Funny, isn’t it? Step into the fire, and all forms of love are reduced to ash or a fleeting sense of impermanence. Yet this smoke reminds me of where I come from. Do you remember, during the holidays, how our parents burned offerings for our ancestors? Fire as a gateway, smoke as the only path. Follow the smoke, and the boundaries between worlds blur, collapsing into each other. Smoke is a road to strange lands. Do you see? One day, I hope you’ll help me become such smoke after the flames consume me.
+    </p>
+
+      <p>I watch you now—sweaty, rough hands digging earth to feed the fire. The rhythm of your shovel matches the crackle of sparks. Your brow furrows under the blaze’s heat and the sharp bite of smoke. In the haze, I see a picture of us reflected in your eyes. I touch it—a phantom form of the ceramic jars we once fired together. I taste the crisp sweetness of the ice cream cones we shared on a summer afternoon. I hear the faint splashes of water puppets. I smell milk and the ingredients we pulled from the fridge to make those meals. And do you remember the shop next door, where the grass was always greener? But maybe you don’t see, touch, taste, hear, or smell any of it now. You drop the shovel and fall onto the bed of earth. For a moment, I want to help you dissolve into the smoke, in the name of the love we once shared with everything.
+    </p>
+
+      <p>You once promised to make me a beautiful, sturdy ceramic jar. Glazed and polished, it would hold everything—the handclasps, the kisses, the glances we exchanged each day. But I never saw that jar. Perhaps the smoke cracked it too many times. I don’t know how to mend those fractures. You told me to think about Kintsugi, the Japanese art of mending with gold. We thought about it but never acted. Another time, I know you worried endlessly about my flight across half the globe. Up there, molecules collide and scrape along the windows in a ceaseless friction. Did you know the plane pierced the clouds like a needle through cotton, like my thoughts veiled in doubt? One day, I think the storms in our love might blow this house away. The smoke drifting before us is but a faint omen of the tremors to come.
+    </p>
+
+      <p>You don’t say a word, but your eyes are fixed on my face. You look at me as though trying to swallow a part of my past—like the way you once devoured a bao bun without chewing. You choke on it. Your tears spill onto the burning slope, onto the chaotic pile of our shared memories. They extinguish the fire, the blaze of our past love. Smoke billows one last time, acrid and sharp. Within seconds, the fire dies. My eyes turn away from you.
+    </p>
+
+      <p>In love with everything, you were the exception.</p>
+
+    </section>
+
+    <div id="other-stories-container">
+      <h2>Other Stories You Might Enjoy</h2>
+      <ul id="other-stories-list">
+        <li><a href="/stories/Cape_Heartache.html">Cape Heartache</a></li>
+        <li><a href="/stories/Fox_Flowerbed.html">Fox in the Flowerbed</a></li>
+        <li><a href="/stories/Saint_Julep.html">Saint Julep</a></li>
+        <li><a href="/stories/Memoirs_Trespasser.html">Memoirs of a Trespasser</a></li>
+        <li><a href="/stories/Slow_Explosions.html">Slow Explosions</a></li>
+        <li><a href="/stories/Waffle_Cone.html">A Whiff of Waffle Cone</a></li>
+      </ul>
+  </div>
+
+  </article>
+
+
+</body>
+</html>

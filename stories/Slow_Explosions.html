@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slow Explosions</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+  <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="stories">
+  
+  <div class="button-container-stories">
+    <a href="../index.html" class="button-stories">Return to Homepage</a>
+    <a href="../stories_vn/Slow_Explosions.html" class="button-stories">View in Vietnamese</a>
+  </div>  
+
+  <article>
+    <header>
+      <h1 class="stories">Slow Explosions</h1>
+      <p class="subtitle">Identity, she said, is the pre-drawn lines that guide traffic smoothly.</p>
+    </header>
+
+    <canvas id="riveCanvas"></canvas>
+    <script>
+      // Initialize the Rive animation
+      const canvas = document.getElementById("riveCanvas");
+    
+      const riveInstance = new rive.Rive({
+        src: "../animation/fox_flowerbed.riv", // Path to the Rive file
+        canvas: canvas,
+        autoplay: true,
+        artboard: "fox 2", // Specify the artboard
+        stateMachines: ["State Machine 1"], // State machine in the Rive file
+        fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Adjust canvas size on load
+        },
+      });
+    
+      // Adjust the canvas size to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    
+      // Listen for window resize events to dynamically adjust the canvas
+      window.addEventListener("resize", resizeCanvas);
+    </script>
+
+    <section>
+      <h2>Molecules float aimlessly in space.</h2>
+      <p> I watch them, eyes vacant, foot tapping lightly. The sun sinks behind the skyscrapers. Downtown hangs with a restless tension. Yểng had told me about this spot many times before—5 PM, fifth floor, at a café on a winding boulevard. Yểng was used to seeing the road bathed in honey, ginger, and lemon under a cool summer sky. She would stare at the traffic surging in chaotic harmony, listen to snippets of conversations rich in life’s hues, and catch the faint scent of fine dust in the air.
+    </p>
+
+      <p>Yểng’s plane crashed somewhere on a boulevard halfway around the world. It fell, as if echoing the towers of 9/11, creating a tremor in our shared consciousness. In a fleeting note, she once said: two people alone can plant the seed of a society.
+    </p>
+
+      <p>Strange. Yểng and I met at intersections—more than one. We talked on a flight to Central Asia, tethered to every connection. Every country converged at the center of the world. We crossed paths at intersections of language, restless nights, groggy long-haul flights, and the aching search for lost values back home. Intersections, like a slow explosion—pressure building until fragments scatter everywhere.
+    </p>
+
+      <p>Yểng used to say she’d reconstruct the identity of a city someday. It was her dream, carried through countless flights, from her physical body to the far reaches of her mind. This street, she thought, was too chaotic: erratic lanes, bizarre turns, and suffocating gridlocks. I asked what a complete identity would look like—whether she embodied her name or if her name consumed her. Yểng didn’t answer. She simply pointed to the yellow and white lines on the road. Identity, she said, is the pre-drawn lines that guide traffic smoothly. But identity is also when cars veer off course, collide, and explode. It’s the pedestrians rushing out of their names to stand frozen in the street. It’s the dust settling on faces staring at motion ahead, ignoring stillness behind.
+    </p>
+
+      <p>I thought identity was the absurdity of breaking molds. But Yểng disagreed—not with words, but with the certainty of her silence. To her, life was a literary work. Meaning emerged only after the author had died—whether figuratively or literally didn’t matter much.
+    </p>
+
+    <p>I imagined it too—streetlights blazing, road markings blurred in the dark. A plane crashing into the ground, creating a black hole. Did the unseen lines of the road mirror the void in the sky? Or had the black hole always been there, a magnetic pull waiting? What would Yểng say if she saw that scene? Likely, she wouldn’t doubt her place or her experience in that moment. She wouldn’t sit in hesitation, but instead dissect the scene for me with precision.
+    </p>
+
+    <p>But in the end, it’s all hypothetical. There’s no explosion on streets lit like fireflies. The sun still sets. Life spills out endlessly. The floating molecules of memory in my head blur like the faint lines in Yểng’s stories. </p>
+    <p>The slow explosions unfold somewhere on the other side of the globe.
+    </p>
+
+    </section>
+
+    <div id="other-stories-container">
+      <h2>Other Stories You Might Enjoy</h2>
+      <ul id="other-stories-list">
+        <li><a href="/stories/Cape_Heartache.html">Cape Heartache</a></li>
+        <li><a href="/stories/Fox_Flowerbed.html">Fox in the Flowerbed</a></li>
+        <li><a href="/stories/Love_Everything.html">In Love with Everything</a></li>
+        <li><a href="/stories/Memoirs_Trespasser.html">Memoirs of a Trespasser</a></li>
+        <li><a href="/stories/Saint_Julep.html">Saint Julep</a></li>
+        <li><a href="/stories/Waffle_Cone.html">A Whiff of Waffle Cone</a></li>
+      </ul>
+  </div>
+
+  </article>
+
+
+</body>
+</html>

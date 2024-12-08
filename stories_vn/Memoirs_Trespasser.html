@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hồi ức kẻ xâm phạm</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+  <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="stories">
+  
+  <div class="button-container-stories">
+    <a href="../index.html" class="button-stories">Trở về Trang Chủ</a>
+    <a href="../stories/Memoirs_Trespasser.html" class="button-stories">Đọc bằng tiếng Anh</a>
+  </div>  
+
+  <article>
+    <header>
+      <h1 class="stories">Hồi ức kẻ xâm phạm
+    </h1>
+      <p class="subtitle">Cảm giác đó được gọi tên là gì. Cái cảm giác mà ta cứ liên tục tìm kiếm một thứ gì đó để ngấu nghiến không chỉ vì một cơn đói vồn vã, mà chỉ vì ta muốn mình được nuốt trọn cái gì đó cho ngày tháng trôi dần qua.</p>
+    </header>
+
+    <canvas id="riveCanvas"></canvas>
+    <script>
+      // Initialize the Rive animation
+      const canvas = document.getElementById("riveCanvas");
+    
+      const riveInstance = new rive.Rive({
+        src: "../animation/fox_flowerbed.riv", // Path to the Rive file
+        canvas: canvas,
+        autoplay: true,
+        artboard: "fox 2", // Specify the artboard
+        stateMachines: ["State Machine 1"], // State machine in the Rive file
+        fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Adjust canvas size on load
+        },
+      });
+    
+      // Adjust the canvas size to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    
+      // Listen for window resize events to dynamically adjust the canvas
+      window.addEventListener("resize", resizeCanvas);
+    </script>
+
+    <section>
+      <h2>Trời hè oi cùng nắng vàng đâm toạc cửa kính.</h2>
+      <p>Mồ hôi Dót đầm đìa chảy dài trên thịt da và những lỗ khoét trên chiếc áo củn cởn. Đôi tay Dót rắn chắc miết dài trên cơ thể tôi, nhẹ nhàng và lơ đãng. Dót đang nghĩ về những gì môi mình sẽ chạm vào, trong chốc lát nữa thôi. Anh sẽ đưa đôi bàn tay dài ngón của mình vào trong để lấy đi thứ gì đó giúp mình tận hưởng khoái cảm đời sống này. Mùi cơ thể anh phảng phất vị tanh nồng của mồ hôi nhưng cũng thanh thoát những nốt hương đặc trưng của con người. Cổ anh gân guốc với yết hầu chuyển động lên xuống một nhịp điệu tuần hoàn giống cái cách con người duy trì đời sống giống loài mình. Dót mở người tôi nhẹ nhàng và thấu đáo. Một dòng trắng đục đổ tứ tung lên cơ thể anh. Ly sữa Dót để hờ trong tôi đã phản phác chính anh vào lúc mà cổ họng anh nóng ran một mong muốn dịu hòa. Dót vươn tay lấy ly trà cạnh bên và đóng tôi lại. Anh vươn tay lấy vội những mảnh giấy lau mình. Những làn gió lạnh thổi từ tôi vào người anh lại quay về ôm ấp chính nó. Trong lòng tôi lúc nào cũng lạnh lẽo, chỉ đợi vài lần trong ngày Dót đến và mở mang những xúc cảm. Nhưng anh cũng rời đi rất vội vã. Giữa cuộc đời duy chuyển lần hồi của anh sẽ chẳng có một lý do nào khiến anh nương tựa vào một sự bất động hữu hình của vật thể chiếm đoạt cả một góc nhà. 
+    </p>
+
+      <p>Tôi đã chứng kiến nhiều lần Dót mở những vật thể khác trước mặt mình. Những vật thể sống động hơn với những răng khớp có thể chạy cùng chuyển động với anh. Không chỉ với cái yết hầu ngụp lặn trong cái cổ gân guốc kia, mà còn với những phần khác trên cơ thể của Dót và những vật phẩm khác. Hoặc bằng một cách thần kỳ phản lại với tự nhiên nào đó, Dót cũng truy tìm được một cách thức thỏa mãn cuộc giao độ của cả hai. Dót là người thô thiển và bạo tàng trong những khoái cảm của mình. Anh khác nhiều với cái tên thanh nhạt tưởng chừng trấn yểm được những vô độ trong cá tính của một con người. Nhưng cái tên chẳng nghĩa lý gì khi mọi sự vật bao quanh anh chẳng mảy may được chính danh. Hẳn anh sẽ chẳng thể gọi được tôi là gì, ngoài một danh từ chung “cái tủ lạnh” để trữ những thứ anh luyến tiếc cho cái mồm của mình, cùng với hy vọng thời gian trôi chậm hơn trong tôi để anh tiếp tục thưởng thức quá khứ xa vời vợi. Nhưng giá như anh nhìn thấy những gì được bảo lưu là tất cả và xem tôi như một phần hữu dụng, Dót sẽ không mãi đau đáu đem về những kẻ xâm phạm trôi tuột vào miền ký ức sâu thẳm trong cuộc đời anh. Dót không sợ họ cuỗm đi mất thứ gì đó trong anh hay sao? Dót không sợ họ sẽ lấy hết những trà và sữa anh đặt để trong lòng tôi hay sao? Dót vô tư đến lạ thường những ngày anh mở những vật phẩm mới trước mặt tôi. Liệu những thứ vật phẩm ấy, trong hồi ức của chúng, ngoài Dót và đôi bàn tay chực chờ những xao động mạnh bạo, có còn đâu đó hình ảnh của tôi đang chăm chú dõi theo từng biểu cảm của anh. 
+
+    </p>
+
+      <p>Trời đêm với những vì sao chớp tắt triệu năm ánh sáng qua khung cửa sổ. Dót nằm khỏa thân trên trường kỷ với cây quạt luồn bắt cơ thể anh. Giữa cái tĩnh mịch của đời sống chung cư phố thị về đêm, mọi ánh đèn vụt tắt. Chung cư của Dót mất điện. Trong tôi râm ran một cảm giác mất đi sự lạnh lẽo là một chức năng mà Dót vốn cần. Trong bóng đêm, tôi thấy Dót xao động trong cơ thể của chính mình. Có lẽ tôi đã quên đề cập đến một điều, Dót cũng dùng tay anh để mở ra những bí mật trong con người mình. Nhưng rất nhiều lần, tôi không tự mắt chính kiến được điều đó. Tôi e ngại cho cảm giác khoái lạc tội lỗi trong chính tâm tưởng này. Rằng mọi cá thể trong đời sống này có thể đạt được cảm giác thần thánh ấy chỉ với chính mình hay sao? Tôi luôn cần Dót dùng đôi tay anh để mở lấy phần ánh sáng bị kìm hãm trong tôi. Bằng một cách diệu kỳ nào đó tôi không trông đợi, tôi không muốn mình phải chật vật với sự vô giác của kim loại và sắt mài. Dù vậy, trong tôi đang râm ran về cơn mất điện. Sự lạnh nhạt ủ ê bên trong cơ thể này dần xao động bởi các phân tử nhiệt rã khỏi vỏ bọc của chính chúng. Là cảm giác mà Dót đã từng nói với tôi những ngày anh cô đơn đến cùng cực sao? Là lý do diễn giải cho những lần Dót mở tôi lưng chừng mỗi vài phút một lần để kiếm thứ gì đó tích trữ ngược lại vào trong người anh hay sao? Cảm giác đó được gọi tên là gì. Cái cảm giác mà ta cứ liên tục tìm kiếm một thứ gì đó để ngấu nghiến không chỉ vì một cơn đói vồn vã, mà chỉ vì ta muốn mình được nuốt trọn cái gì đó cho ngày tháng trôi dần qua. Trong đó thoắt ẩn một vẻ đẹp của sự cô đơn nhưng cũng chất chứa cái hỗn mang của vật thể. Đôi khi tôi gọi đó là hỗn hợp của tình yêu. Chuối, sô cô la, sữa chua, sầu riêng, chả lạnh, cà phê, rồi đến bánh ngọt đều là những nguyên liệu không cần cất nhắc kỹ lưỡng. Chúng làm bụng ta râm ran và xốn xang lạ thường. 
+
+    </p>
+
+      <p>Dót vẫn nằm trên trường kỷ cùng đôi tay nhún nhảy không ngừng trên da thịt. Chốc lát nữa thôi, tôi tưởng tượng đôi tay ấy sẽ chạm vào mình với những sự sống còn chớm nở. Nhưng anh sẽ nghĩ gì nếu lòng tôi râm ran thay vì lạnh lẽo như những gì anh vẫn hằng mong đợi. Dót sẽ nghĩ gì? Tôi đang chết dần khỏi bản chất của mình khi nhìn anh bộc lộ ra những điều sâu thẳm bên trong. Những điều sâu thẳm đến độ có thể trong một kỷ nguyên nào đó, tôi và anh đã từng là những phân tử sống chung trong cùng một cơ thể. Hoặc rằng kỷ nguyên ấy vẫn còn xa khỏi tầm với. Sau một hồi lâu đến kiệt quệ, anh vươn tay cầm lấy hủ sữa chua chảy mịn dần và đưa chúng trôi ừng ực vào cổ họng. Dót uống lấy những gì anh từng đặt để trong tôi. Sau tất cả, Dót tiến đến và dùng chính bàn tay ấy mở cánh cửa của tôi như những gì đã được tưởng tượng. Nhưng anh thô bạo vơ vét tất cả những thứ hữu hình bên trong. Những tiếng loảng xoảng vang lên không ngớt khi mọi thứ đổ tứ tung trên mặt sàn. Dót không nói một lời, anh chỉ hành động. Bên trong tôi nhẹ nhõm khi anh lục lọi tìm kiếm một không gian. Và Dót ngồi vào trong tôi trong lặng lẽ. Anh dót khỏi cuộc đời và đóng cánh cửa lại nhẹ nhàng. Lần đầu tiên, Dót để tôi bao bọc anh bằng sự ấm nóng khác lạ bên trong mình. Tôi cũng nhắm hờ đôi mắt để cảm nhận những vì sao chớp tắt triệu năm ánh sáng qua khung cửa sổ. Chúng đã chết đi, hay đang tồn tại, hoặc sẽ lụi tàn. Trong buổi đêm, tôi và Dót chuyển động nhịp nhàng theo chu kỳ của những vì sao soi rọi mình đến Trái Đất. 
+
+    </p>
+
+      <p>Buổi sáng thức giấc, tôi thấy cánh cửa của mình mở toang. Dót đã không còn bên trong nữa, không còn sự ấm nóng hay lạnh lùng. Tất cả chỉ là một cảm giác trống rỗng tầm thường. Giương đôi mắt nhìn quanh, tôi thấy những người bạn của mình cũ kỹ và rách nát đến cùng cực. Chúng tôi ngước nhìn nhau trong sự thương hại và luyến tiếc về những ngày mướt trượt khỏi tầm tay. Tại bãi đồi này, tất cả đã không còn giữ được chức năng của mình. Dót đã nghĩ tôi là một phế phẩm. Dót không còn nhìn thấy những khổ ải của một chiếc tủ lạnh. Dót đã không còn đặt để những khoái cảm của anh vào bên trong. 
+
+    </p>
+
+    <p>Dót đã đánh lãng đi hồi ức của một kẻ xâm phạm. 
+    </p>
+
+    </section>
+
+    <div id="other-stories-container">
+      <h2>Other Stories You Might Enjoy</h2>
+      <ul id="other-stories-list">
+        <li><a href="/stories_vn/Cape_Heartache.html">Mũi Đất Đau Lòng</a></li>
+        <li><a href="/stories_vn/Fox_Flowerbed.html">Sương Mù Ngày Cũ có Con Cáo trên Giường Hoa</a></li>
+        <li><a href="/stories_vn/Love_Everything.html">Trong Tình Yêu với Mọi Thứ</a></li>
+        <li><a href="/stories_vn/Saint_Julep.html">Thánh Julep</a></li>
+        <li><a href="/stories_vn/Slow_Explosions.html">Cú nổ chậm</a></li>
+        <li><a href="/stories_vn/Waffle_Cone.html">Thoảng Vị Ốc Quế</a></li>
+      </ul>
+  </div>
+
+  </article>
+
+
+</body>
+</html>

@@ -1,100 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fox in the Flowerbed</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
   <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.min.css">
-  <style>
-    .button-container {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: space-between;
-    }
-    .button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      color: white;
-      border: none;
-      text-align: center;
-      cursor: pointer;
-    }
-    .button:hover {
-      border-radius: 20px;
-    }
-    @keyframes fadeOut {
-      from {
-        opacity: 1;
-      }
-      to {
-        opacity: 0;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Apply the Fade-In Animation */
-    body {
-      animation: fadeIn 0.5s ease-in;
-    }
-  </style>
-
+  <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
-          <!-- Buttons for navigation -->
-  <div class="button-container">
-    <!-- Link to homepage -->
-    <a href="../index.html" class="button">Return to Homepage</a>
 
-    <!-- Link to Vietnamese version -->
-    <a href="../stories/Fox_Flowerbed.html" class="button">View in English</a>
-  </div>    
+<body class="stories">
+  <div class="button-container-stories">
+    <a href="../index.html" class="button-stories">Trở về Trang Chủ</a>
+    <a href="../stories/Fox_Flowerbed.html" class="button-stories">Đọc bằng tiếng Anh</a>
+  </div>  
+
   <article>
     <header>
-      <h1>Sương Mù Ngày Cũ có Con Cáo trên Giường Hoa</h1>
-      <p class="subtitle">Traipsing through a mountain meadow, visions of sheer summer dresses spinning in the breeze, the buzz of the first weeks of Spring</p>
+      <h1 class="stories">Sương Mù Ngày Cũ có Con Cáo trên Giường Hoa</h1>
+      <p class="subtitle">Đó không phải là con rối gỗ duy nhất của cuộc đời nhưng là cuộc đời duy nhất cả hai chúng tôi nhìn thấy nó.</p>
     </header>
 
     <canvas id="riveCanvas"></canvas>
+    <script>
+      // Initialize the Rive animation
+      const canvas = document.getElementById("riveCanvas");
+    
+      const riveInstance = new rive.Rive({
+        src: "../animation/fox_flowerbed.riv", // Path to the Rive file
+        canvas: canvas,
+        autoplay: true,
+        artboard: "fox 2", // Specify the artboard
+        stateMachines: ["State Machine 1"], // State machine in the Rive file
+        fit: rive.Fit.CONTAIN, // Contain the animation within the canvas
+        alignment: rive.Alignment.CENTER, // Center the animation
+        onLoad: () => {
+          console.log("Rive animation loaded");
+          resizeCanvas(); // Adjust canvas size on load
+        },
+      });
+    
+      // Adjust the canvas size to fit the viewport
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    
+      // Listen for window resize events to dynamically adjust the canvas
+      window.addEventListener("resize", resizeCanvas);
+    </script>
 
     <section>
-      <h2>It wasn’t the only wooden puppet in life, but it was the only one we both saw together.</h2>
-      <p>Tiếng sương nghe rất lảnh. Trên hàng ghế đầu, mọi âm thanh vọng từ khán giả phía sau và sân khấu mặt trước hòa thành một tiếng ồn trắng. Tôi liếc mắt nhìn Di ngồi cạnh cùng ngón tay vô tình chạm vào ghế cậu và một cái liếc nhìn phẩy nhẹ vào bóng tối trước khi ánh đèn sân khấu được kéo lại. Sắc màu vạch dần ra bởi những giao tử nhiệt. Gam màu nóng trên những con rối nước và cờ truyền thống điểm nét cho thanh âm khán phòng. Những chuyển động đẩy con mắt tôi trở về với tâm điểm sân khấu. Di không nói gì, nhưng ngón tay út cậu cũng đánh khẽ vào tay ghế tôi nhịp nhàng theo điệu gõ của trống nhịp. Sương mù giăng là là trên mặt nước, một hiệu ứng mờ ảo cho sự xuất hiện của những vật thể được ký gửi linh hồn. Những con rối nước chuyển mình khỏi lớp rèm đỏ huyền bí. Chúng di chuyển với tiếng kích gọi từ nhạc cụ dựng thành hai hàng bên sườn sân khấu và được chơi bởi những nghệ nhân. Từng vân hình trải dài trên mảnh rèm cũng gợn theo mặt sóng theo cái lả lơi của gió nhẹ phả từ âm thanh. Di lén lút nhìn tôi trong cái chen lấn của âm sắc bấy giờ. Nhưng cả hai đã không nói gì. Sương mù dần tan. Vở rối kịch bắt đầu.</p>
+      <h2>Tiếng sương nghe rất lảnh.</h2>
+      <p>Trên hàng ghế đầu, mọi âm thanh vọng từ khán giả phía sau và sân khấu mặt trước hòa thành một tiếng ồn trắng. Tôi liếc mắt nhìn Di ngồi cạnh cùng ngón tay vô tình chạm vào ghế cậu và một cái liếc nhìn phẩy nhẹ vào bóng tối trước khi ánh đèn sân khấu được kéo lại. Sắc màu vạch dần ra bởi những giao tử nhiệt. Gam màu nóng trên những con rối nước và cờ truyền thống điểm nét cho thanh âm khán phòng. Những chuyển động đẩy con mắt tôi trở về với tâm điểm sân khấu. Di không nói gì, nhưng ngón tay út cậu cũng đánh khẽ vào tay ghế tôi nhịp nhàng theo điệu gõ của trống nhịp. Sương mù giăng là là trên mặt nước, một hiệu ứng mờ ảo cho sự xuất hiện của những vật thể được ký gửi linh hồn. Những con rối nước chuyển mình khỏi lớp rèm đỏ huyền bí. Chúng di chuyển với tiếng kích gọi từ nhạc cụ dựng thành hai hàng bên sườn sân khấu và được chơi bởi những nghệ nhân. Từng vân hình trải dài trên mảnh rèm cũng gợn theo mặt sóng theo cái lả lơi của gió nhẹ phả từ âm thanh. Di lén lút nhìn tôi trong cái chen lấn của âm sắc bấy giờ. Nhưng cả hai đã không nói gì. Sương mù dần tan. Vở rối kịch bắt đầu. 
+      </p>
 
-      <p>Di said nothing, but his pinky tapped lightly on the armrest in rhythm with the beat of the drum. Mist hovered above the water, creating an ethereal effect for the appearance of objects imbued with soul. The water puppets emerged from the crimson curtain’s mystery. They moved in response to the beckoning music, played by artisans flanking the stage. Even the folds of the curtain rippled faintly, mirroring the water’s surface, stirred by the gentle sigh of sound. Di stole a furtive glance at me amidst the interplay of tones, but neither of us spoke. The mist gradually dispersed, and the puppet play began.</p>
+      <p>Những chú rối lả lướt trên mặt nước. Đôi mắt chúng xoáy thẳng vào thâm tâm của con người lạc lõng không ý vị. Thay cho những rối Tây được treo bằng sợi chỉ và phải dùng tay, chúng trụ thân mình trên một chiếc gạc sâu dưới lòng nước và di chuyển nhẹ nhàng. Nhưng gương mặt của Di nom rất sợ hãi khi màn sương lại vây kín dưới ánh đèn vàng. Di lo lắng trước thứ gì đó mờ mịt hơn cả cậu. Di chẳng biết con rối trên thân cây ấy có đau đáu hay không về lẽ sống của chính mình. Đó không phải là con rối gỗ duy nhất của cuộc đời nhưng là cuộc đời duy nhất cả hai chúng tôi nhìn thấy nó.  Những đốm sáng rọi xuống lơ đễnh trên từng nếp vải. Tiếng hát chèo được cất lên. Tôi không hiểu những ca từ để lật ngược chính mình. Giống Di nhiều lần đã làm chuyện đó khi cả hai gây gổ. Nhưng sau những tiếng vọng, sương mù lại tan. Trả lại cho không gian những màu sắc vẹn toàn của thực tại. 
+      </p>
 
-      <p>The puppets glided gracefully across the water’s surface, their eyes piercing into the depths of lonely, incomprehensible souls. Unlike Western marionettes suspended by strings, these stood upon rods submerged beneath the water, their movements fluid and unrestrained. Yet Di's expression grew fearful as the mist closed in again under golden light. He seemed troubled by something more obscure than himself, pondering whether the puppet atop its wooden perch pondered its own existence.</p>
+      <p>Tôi đếm số lần mình gặp Di đến tận ngày hôm nay. Trên dưới những kẽ tay khi bức màn lại được vén. Di vẫn chăm chú nhìn vào chi tiết trên mảnh trang phục hay từng họa tiết nhỏ trên gương mặt gốm sứ. Cậu chưa bao giờ thấy chán khi lần dò theo những chi tiết bé nhỏ tôi chẳng màng. Hẳn vì vậy cả hai mãi chưa thể nhìn cùng về một hướng. Tôi nghĩ đến cảnh con rối nổ tung với một mảnh gốm ghim thẳng vào đôi mắt của cậu. Liệu khi ấy Di sẽ ngẩng mặt nhìn về phía tôi như một lời gọi cứu trợ hay không. Rồi đó cũng chỉ là một chất vấn vương vãi trong tâm tưởng cả hai. Sương phủ mờ mắt cậu trước khi làm lộ lại những vân nước gờn gợn trên mặt chiếu. Bầy vịt bơi dần ra sau tấm màn rồi lênh đênh trên dòng nước. Đôi mắt Di cũng nhá nhem một dòng nước trong. Đôi mắt cậu thanh như nuốt trọn được cái nhìn của người khác. Cũng chỉ vì hiểu điều đó mà mãi cậu chưa ngước nhìn lấy ai thật trực diện lấy một lần. Đôi mắt cứ bơi qua lại trước bầy vịt dạo mình vòng quanh trên sân khấu đan bằng nước xanh biếc. Tiếng nhạc cụ với cao độ xoắn vòng gợi thêm những phần hình bị thiếu trong chuyển động của gốm. Chúng làm mượt những thấp thoải trong đôi mắt người. 
+      </p>
 
-      <p>It wasn’t the only wooden puppet in life, but it was the only one we both saw together. Spotlights wandered lazily over each crease in the fabric. A chèo song began, its words elusive, refraining from unlocking my thoughts. It was much like the way Di had reversed himself during our quarrels. Yet, as the echoes faded, the mist cleared again, returning the space to the fullness of reality’s colors.
-      I counted the times I had met Di, up to this very moment. Between the gaps of my fingers as the curtain rose, Di fixated on the details of the costumes and the minute patterns on porcelain faces. He never tired of tracing such intricacies, ones I never cared for. Perhaps that was why we could never quite look in the same direction.</p>
+      <p>Nhưng chưa được bao lâu, con cáo vàng xuất hiện trồi ngụp như một cái dằm trên da thịt. Di hoài nghi về những chuyển động của cáo và những con rối. Anh đặt ra giả thuyết
+      </p>
 
-      <p>I envisioned the puppet shattering, a shard of porcelain lodging itself in his eye. Would Di look to me then, pleading for rescue? But that was merely a question scattered in the confines of our shared thoughts. The mist veiled his eyes again before revealing the faint ripples on the projection’s water. A flock of ducks drifted away behind the curtain, floating idly on the stream. Di’s eyes grew misty too, reflecting a clear, inner tide. His gaze devoured the world, too pure to meet anyone else directly. His eyes swam, following the ducks circling on the emerald stage. The music spiraled, filling in the gaps of motion, smoothing the rough edges in human vision.</p>
+      <p>"Có những người lặn bên dưới mặt nước để đưa chúng vùng vẫy khắp những vị trí được đánh dấu sẵn."</p>
 
-      <p>But then, the golden fox appeared, surfacing and diving like a splinter beneath skin. Di seemed skeptical of the fox’s movements and the puppets’. He hypothesized:</p>
+      <p>Nhưng Di không lý giải được cái cách mà con cáo đưa mình trèo cao lên trên ngọn cây chuối. Nó ẩn mình sau những bông hoa chuối to thân và rình rập bầy vịt cho một bữa săn no căng bụng. Nó lấm lét rung mình rồi chực chờ cơ hội tiến thân vào lãnh địa và trở thành kẻ săn mồi táo bạo. Di giống nó trong những ngày cũ, khi anh tự chủ được những chuyển động của mình và không ngại ngùng bởi những tổn thương. Nhưng có lẽ nhiều điều đã thay đổi cách anh đối xử với cuộc sống của mình và những người xung quanh. Nhiều điều, trong đó có cái cách con cáo treo mình trên giường hoa chuối làm anh hoài nghi về những điều tốt đẹp trong thế giới này. Nhạc lại vang lên rả rít từ trống cơm, từ đàn nhị, đàn tranh, đàn bầu, và những nốt trầm bổng từ giọng ca của ả đào. Nhưng con cáo vẫn rung mình trên cành không chút xê dịch. Cùng lúc, một con cáo khác lại bơi ra từ phía sau cây chuối. Khán giả xôn xao về việc hai con cáo cùng xuất hiện. Liệu đó là ẩn ý của vở múa rối, hay có sự cố kỹ thuật đã xảy ra. Tôi nghe Di thở phào nhẹ nhõm cạnh bên, đôi mắt cậu đảo qua hai con rối như thể nhìn thấy điều gì đó rất thú vị và là lời giải toàn năng cho cuộc sống của chính mình. Ngón út tôi đặt trên đùi gần chạm đến ngón út của cậu, nhưng chúng vẫn chần chừ như hai thổi nam châm cùng cực. 
+      </p>
 
-      <p>"There must be people beneath the water, guiding them to marked positions."</p>
+      <p>Một tên nhiếp ảnh lân la tại hàng đầu giơ chiếc máy của mình định bắt trọn khoảnh khắc hiếm hoi. Nhưng ngay khi hắn vừa nhấn nút chụp ảnh, đèn flash đánh tan những sương mù và phơi bày trước mắt một viễn cảnh sáng rực. Con cáo lung lay trên cành cây hoa cùng lúc rơi khỏi vị trí cố định của nó khi đèn chiếu đến. Ả đào trên tay cầm những chiếc ly va vào nhau tạo thành âm điệu cũng đã đánh rơi chúng vào trong lòng mặt hồ. Một giây phút bừng tỉnh trong không gian. Con cáo không còn nằm trên giường hoa lơ đễnh trên không trung. Nó chìm nghỉm vào đáy hồ không một ai dìu dắt. 
+      </p>
 
-      <p>Yet Di couldn’t explain how the fox climbed the banana tree, hiding behind its broad blossoms, poised for a feast. It trembled stealthily, waiting for the right moment to pounce into the realm of audacity. Di was much like that fox in days past, when he commanded his own movements, unhesitant despite pain. But something had changed the way he approached life and those around him—something about the fox perched among banana flowers made him doubt the goodness in the world.
-      Music swelled from the trống cơm, đàn nhị, đàn tranh, đàn bầu, mingling with the lilting voice of the ả đào singer. Yet the fox remained motionless on its branch. Suddenly, another fox swam out from behind the banana tree. The audience buzzed with speculation—was this symbolic, or a technical error? Beside me, Di exhaled a soft sigh of relief, his eyes darting between the two foxes as if they held the key to life itself.</p>
+      <p>Rồi thành hồ cũng vỡ tan tành. Chỉ vì những cú rơi từ trọng trường của Trái Đất mà nó đứt gãy khỏi sự cố định của quá khứ. Tiếng la ó thoang thoảng vang lên sau lưng cùng tiếng chảy róc rách của nước luồn qua đôi giày và những khe hở. Di vẫn đắm chìm đôi mắt của mình vào tâm điểm của sân khấu, nhưng ngón út cậu đã rút lại cùng bàn tay chống lấy đôi cằm say sưa vào thực tại. Cậu không màng những màng sương đã rũ, và con cáo không còn nằm trên giường hoa thư thả. Nó đã bị giáng sâu xuống lòng hồ và bị phong ấn bởi cái hữu hạn của thời gian. Hay là vô hạn? Tôi nhìn Di nhìn chính mình như thể một kiếp sống sẽ không đủ để hiểu chín cõi trùng sinh của loài cáo trước mặt. 
+      </p>
 
-      <p>My pinky rested near his on my lap, but they hesitated, like two magnets repelling each other.</p>
+      <p>Nước vẫn chảy một hồi dài hòa sân khấu vào đời sống khán giả. Nhưng bấy giờ chẳng còn một ai trong khán phòng. Đâu đó chỉ còn sót lại ngón út của tôi chập chững điều khiển thanh gỗ dài cắm vào người Di. Người anh cứng đờ. 
+      </p>
 
-      <p>A photographer prowled to the front row, raising his camera to capture the rare moment. But as the flash fired, it dispersed the mist, exposing a startlingly vivid scene. The fox on the branch quivered, falling from its perch as the light struck. The ả đào dropped her cups into the lake, the sound forming a melody of its own. In that moment of clarity, the fox was no longer lounging on its floral bed in midair. It sank to the lake’s depths without guidance.
-      Then, the lake itself shattered. Gravity tore apart the past’s fragile framework. Faint cries arose from behind, mingling with the gurgling of water seeping into shoes and cracks.</p>
-
-      <p>Di’s eyes remained fixed on the stage’s heart, though his pinky withdrew, and his hand supported his chin, lost in reality. He paid no mind to the dissipating mist or the absent fox. It had plunged into the lake and was sealed by time’s finitude—or was it eternity?
-      I watched Di watching himself, as though one lifetime wouldn’t suffice to grasp the ninefold reincarnations of the fox before us.
-      The water flowed endlessly, merging the stage with the audience’s lives. But by then, the hall had emptied. Somewhere, only my pinky remained, tentatively guiding a wooden rod lodged into Di. His figure stiffened.</p>
-
-      <p>Di was a puppet, a fox, and the world around him, his floral bed.</p>
+      <p>Di cũng là một con rối, con cáo, và xung quanh thế giới là giường hoa anh tựa mình. </p>
     </section>
+
+    <div id="other-stories-container">
+      <h2>Other Stories You Might Enjoy</h2>
+      <ul id="other-stories-list">
+        <li><a href="/stories_vn/Cape_Heartache.html">Mũi Đất Đau Lòng</a></li>
+        <li><a href="/stories_vn/Saint_Julep.html">Thánh Julep</a></li>
+        <li><a href="/stories_vn/Love_Everything.html">Trong Tình Yêu với Mọi Thứ</a></li>
+        <li><a href="/stories_vn/Memoirs_Trespasser.html">Hồi ức Kẻ Xâm Phạm</a></li>
+        <li><a href="/stories_vn/Slow_Explosions.html">Cú nổ chậm</a></li>
+        <li><a href="/stories_vn/Waffle_Cone.html">Thoảng Vị Ốc Quế</a></li>
+      </ul>
+  </div>
+
   </article>
 
 
