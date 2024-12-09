@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Initialize the Rive animation
 const riveInstance = new rive.Rive({
-  src: "read_the_air_update.riv", // Rive file URL
+  src: "/animation/read_the_air_update.riv", // Rive file URL
   canvas: canvas,
   autoplay: true,
   artboard: "HandFox",
