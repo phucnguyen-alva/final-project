@@ -476,14 +476,9 @@ body.stories {
     font-size: 0.6rem;
   }
 
-  #bubble4, #bubble5, #bubble6, #bubble7 {
+  #bubble1, #bubble2, #bubble3, #bubble4, #bubble5, #bubble6, #bubble7 {
     width: 80px;
     height: 80px; /* Ensures circles maintain shape */
-  }
-
-  #bubble1, #bubble2, #bubble3 {
-    width: 180px;
-    height: 180px;
   }
 
   body.about-page .container h1 {
