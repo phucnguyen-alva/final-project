@@ -1,5 +1,5 @@
 
-/* General Reset */
+/* Mainpage */
 body.mainpage, body.about-page{
   margin: 0;
   padding: 0;
@@ -96,7 +96,6 @@ canvas {
 #brand-logo img {
   width: 120px;
   cursor: pointer;
-
 }
 
 /* General Styling for Bubbles */
@@ -213,26 +212,6 @@ canvas {
   width: 200px;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .bubble {
-    font-size: 0.7rem;
-  }
-
-  #bubble1, #bubble2, #bubble3, #bubble4, #bubble5, #bubble6, #bubble7 {
-    width: 70px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .bubble {
-    font-size: 0.6rem;
-  }
-
-  #bubble1, #bubble2, #bubble3, #bubble4, #bubble5, #bubble6, #bubble7 {
-    width: 60px;
-  }
-}
 
 /* Initial State for Fade-In */
 #canvas, .bubble {
@@ -271,7 +250,7 @@ body.about-page * {
 body.about-page {
   background: #000000; /* Solid background color */
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  overflow-y: hidden; /* Enable scrolling within the content if necessary */
+  overflow-y: auto; /* Enable scrolling within the content if necessary */
   min-height: 100vh; /* Ensure the page covers the viewport height */
 }
 
@@ -384,20 +363,6 @@ body.about-page .image img {
   }
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  body.about-page .container h1 {
-    font-size: 2.5rem;
-  }
-
-  body.about-page .content {
-    padding: 20px;
-  }
-
-  body.about-page .content p {
-    font-size: 1rem;
-  }
-}
 body.about-page .btn {
   display: inline-block;
   margin: 5px 10px;
@@ -456,13 +421,14 @@ h1.stories{
   display: block;
   width: 50vw; /* 50% of the viewport width */
   height: 50vh; /* 50% of the viewport height */
-  top:10px;
+  top: 10px;
 }
 
 
 body.stories {
   font-family: "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
+
 
 #other-stories-list li a {
   text-decoration: none; /* Remove underline by default */
@@ -475,5 +441,65 @@ body.stories {
   background-color: rgba(255, 102, 0, 0.1); /* Optional: Add a light background highlight */
   padding: 0 5px; /* Add padding to make the highlight look neat */
   border-radius: 3px; /* Smooth border for the highlight */
+}
+
+
+/* Responsive Design for Medium Screens (Tablets) */
+@media screen and (max-width: 768px) {
+  .bubble {
+    font-size: 0.7rem;
+  }
+
+  #bubble1, #bubble2, #bubble3, #bubble4, #bubble5, #bubble6, #bubble7 {
+    width: 70px;
+    height: 70px; /* Ensures circles maintain shape */
+  }
+
+  body.about-page .container h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  body.about-page .content {
+    padding: 20px;
+  }
+
+  body.about-page .content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* Responsive Design for Small Screens (Phones) */
+@media screen and (max-width: 480px) {
+  .bubble {
+    font-size: 0.6rem;
+  }
+
+  #bubble4, #bubble5, #bubble6, #bubble7 {
+    width: 80px;
+    height: 80px; /* Ensures circles maintain shape */
+  }
+
+  #bubble1, #bubble2, #bubble3 {
+    width: 180px;
+    height: 180px;
+  }
+
+  body.about-page .container h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  body.about-page .content {
+    padding: 15px;
+  }
+
+  body.about-page .content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
 }
 
